@@ -17,6 +17,8 @@ services:
     build:
       context: ./backend
       dockerfile: Dockerfile
+    volumes:
+      - ./backend/app:/app
     depends_on:
       migrater:
         condition: service_completed_successfully 
@@ -26,6 +28,8 @@ services:
     environment:
       API_URL: http://localhost:8050
       WDS_SOCKET_PORT: 0 
+    volumes:
+      - ./frontend/mtg-playpool-frontend:/app
     build:
       context: ./frontend
       dockerfile: Dockerfile

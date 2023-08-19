@@ -58,6 +58,16 @@ async def get_cards(page:int = 0, db:Session = Depends(get_db)):
     
     return json.dumps(net_card)
 
+@app.get("/api/search")
+async def search_cards(name:str, page:int = 0, db:Session = Depends(get_db)):
+    page_limit = 5
+    cards = db.query(Cards).filter(Cards.name.like(f'%{name}%')).limit(page_limit).all()
+    net_card = {}
+    for card in cards:
+        net_card[card.name] = build_network_card(card, db)
+ 
+    return json.dumps(net_card)
+
 @app.get("/api/cardslist")
 async def get_cards_list(page:int = 0, db:Session = Depends(get_db)):
     page_limit = 50
