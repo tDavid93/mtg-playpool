@@ -1,0 +1,58 @@
+version: '3'
+services:
+  
+  database:
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+
+  backend:
+    image: mtg-playpool/backend
+    environment:
+      DATABASE_URL: postgresql://postgres:postgres@database:5432/postgres
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    depends_on:
+      migrater:
+        condition: service_completed_successfully 
+    
+  frontend:
+    image: mtg-playpool/frontend
+    environment:
+      API_URL: http://localhost:8050
+      WDS_SOCKET_PORT: 0 
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    
+  nginx:
+    image: mtg-playpool/nginx
+    
+    build:
+      context: ./nginx
+      dockerfile: Dockerfile
+    ports:
+      - "8050:80"
+    depends_on:
+      - backend
+      - frontend
+
+
+  migrater:
+    image: mtg-playpool/migrate
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@database:5432/postgres
+    build:
+      context: ./database/migrate
+      dockerfile: Dockerfile
+    restart: "no"
+    depends_on:
+      - database
+          
+
+      
