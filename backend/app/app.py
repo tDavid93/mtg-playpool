@@ -42,31 +42,17 @@ def get_db():
     finally:
         db.close()
 
-@app.get("/")
-async def index():
-    
-    return {"message": "hello"}
 
-
-@app.get("/cards")
-async def get_cards(page:int = 0, db:Session = Depends(get_db)):
-    page_limit = 5
-    cards = db.query(Cards).limit(page_limit).all()  
-    net_card = {}
-    for card in cards:
-        net_card[card.name] = build_network_card(card, db)
-    
-    return json.dumps(net_card)
 
 @app.get("/api/search")
-async def search_cards(name:str, page:int = 0, db:Session = Depends(get_db)):
-    page_limit = 5
-    cards = db.query(Cards).filter(Cards.name.like(f'%{name}%')).limit(page_limit).all()
-    net_card = {}
+async def search_cards(search:str, page:int = 0, db:Session = Depends(get_db)):
+    page_limit = 30
+    cards = db.query(Cards).filter(Cards.language == 'English').filter(Cards.name.ilike(f'%{search}%',)).order_by(Cards.name).offset(page_limit*page).limit(page_limit).all()
+    net_card = []
     for card in cards:
-        net_card[card.name] = build_network_card(card, db)
+        net_card.append( build_network_card(card, db))
  
-    return json.dumps(net_card)
+    return jsonable_encoder(net_card)
 
 @app.get("/api/cardslist")
 async def get_cards_list(page:int = 0, db:Session = Depends(get_db)):
