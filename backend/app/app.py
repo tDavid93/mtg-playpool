@@ -10,7 +10,6 @@ from mtgjson_db.database import engine, sessionLocal
 from mtgjson_db.mtg_models import *
 from sqlalchemy.orm import Session
 
-import json
 
 Base.metadata.create_all(bind=engine)
 

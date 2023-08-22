@@ -16,6 +16,7 @@ function Search_Menu({ onSearch }) {
         value={searchInput}
         onChange={(e) => setSearchInput(e.target.value)}
         mr={2}
+        onInput={handleSearch}
       />
       <Button colorScheme="blue" onClick={handleSearch}>
         Search
