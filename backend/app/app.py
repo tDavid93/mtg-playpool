@@ -1,10 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.params import Depends
 from fastapi.middleware.cors import CORSMiddleware
-
-
 from fastapi.encoders import jsonable_encoder
-
 
 from mtgjson_db.database import engine, sessionLocal
 from mtgjson_db.mtg_models import *
@@ -15,7 +12,7 @@ Base.metadata.create_all(bind=engine)
 
 app = FastAPI()
 
-
+# Cross Origin Resource Sharing (CORS) adresses
 origins = [
     "nginx"
     "http://nginx",
@@ -26,6 +23,7 @@ origins = [
     
 ]
 
+# CORS Middleware
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -34,6 +32,7 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
+# Dependency
 def get_db():
     db = sessionLocal()
     try:

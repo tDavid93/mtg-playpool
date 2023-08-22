@@ -554,3 +554,4 @@ yarn-error.log*
 # Yarn Integrity file
 .yarn/unplugged
 # yarn v2
+pyvenv.cfg
