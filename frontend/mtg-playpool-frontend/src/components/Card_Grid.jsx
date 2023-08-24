@@ -3,6 +3,7 @@ import { SimpleGrid, GridItem, Divider, Flex, Container, Box } from "@chakra-ui/
 import Mtg_Card from "./Mtg_Card";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Search_Menu from "./Search_Menu";
+import "../styles.css"
 
 function Card_Grid() {
   const [cards, setCards] = useState([]);
@@ -51,9 +52,7 @@ function Card_Grid() {
 
   return (
     <>
-      <Divider height="5" />
-      <Box background="whiteAlpha.900" backdropBlur="md" position="sticky" top="0" zIndex="sticky">
-      
+      <Box className="search-box" backdropBlur="md" position="center" top="0" zIndex="sticky" left="50%" >
       <Search_Menu onSearch={handleSearch} />
       <Divider height="1" />
       </Box>
@@ -64,15 +63,15 @@ function Card_Grid() {
         loader={<h4>Loading...</h4>}
         endMessage={<p>End of cards</p>}
       >
-        <Box height="100hv" overflow="scroll">
-        <SimpleGrid templateColumns="repeat(5, 1fr)" gap={6} overflow="auto">
+        
+        <SimpleGrid className="custom-card-grid" templateColumns="repeat(5, 1fr)" gap={6} overflow="inherit">
           {cards.map((card) => (
             <GridItem key={card.id} overflow="auto">
               <Mtg_Card card={card} />
             </GridItem>
           ))}
         </SimpleGrid>
-       </Box>
+       
       </InfiniteScroll>
     </>
   );

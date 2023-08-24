@@ -328,4 +328,16 @@ class CardCollection(Base):
     card_uuid = Column(String(36))
     quantity = Column(Integer)
 
+
+
+class User(Base):
+    __tablename__ = 'user'
     
+    id = Column(Integer,primary_key=True,autoincrement=True)
+    username = Column(String(255))
+    password = Column(String(255))
+    
+class UserDeck(Base):
+    __tablename__ = 'userdeck'
+    
+    id =     
