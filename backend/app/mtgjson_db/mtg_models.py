@@ -340,4 +340,4 @@ class User(Base):
 class UserDeck(Base):
     __tablename__ = 'userdeck'
     
-    id =     
+    id = Column(Integer,primary_key=True,autoincrement=True)
