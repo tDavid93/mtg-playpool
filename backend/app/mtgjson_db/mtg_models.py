@@ -6,6 +6,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import ForeignKey
 
+import passlib.hash as _hash
 
 class Meta(Base):
     __tablename__ = 'meta'
@@ -329,15 +330,3 @@ class CardCollection(Base):
     quantity = Column(Integer)
 
 
-
-class User(Base):
-    __tablename__ = 'user'
-    
-    id = Column(Integer,primary_key=True,autoincrement=True)
-    username = Column(String(255))
-    password = Column(String(255))
-    
-class UserDeck(Base):
-    __tablename__ = 'userdeck'
-    
-    id = Column(Integer,primary_key=True,autoincrement=True)

@@ -6,17 +6,27 @@ services:
     ports:
       - "5432:5432"
     environment:
-      POSTGRES_USER: postgres
-      POSTGRES_PASSWORD: postgres
-      POSTGRES_DB: postgres
+      JWT_SECRET: ${JWT_SECRET}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB} 
+
 
   backend:
     image: mtg-playpool/backend
-    environment:
-      DATABASE_URL: postgresql://postgres:postgres@database:5432/postgres
     build:
       context: ./backend
       dockerfile: Dockerfile
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+      ACCESS_TOKEN_EXPIRE_MINUTES: ${ACCESS_TOKEN_EXPIRE_MINUTES}
+      REFRESH_TOKEN_EXPIRE_MINUTES: ${REFRESH_TOKEN_EXPIRE_MINUTES}
+      ALGORITHM: ${ALGORITHM}
+      JWT_REFRESH_SECRET_KEY: ${JWT_REFRESH_SECRET_KEY}
+
     volumes:
       - ./backend/app:/app
     depends_on:
@@ -50,11 +60,14 @@ services:
 
   migrater:
     image: mtg-playpool/migrate
-    environment:
-      DATABASE_URL: postgres://postgres:postgres@database:5432/postgres
     build:
       context: ./database/migrate
       dockerfile: Dockerfile
+    environment:
+      JWT_SECRET: ${JWT_SECRET}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
     restart: "no"
     depends_on:
       - database
