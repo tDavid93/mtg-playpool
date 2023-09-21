@@ -3,7 +3,7 @@ import axios from 'axios';
 import UseAuth from '../hooks/useAuth';
 import { Link, useNavigate, useLocation } from 'react-router-dom';
 
-const LoginComp = () => {
+const RegisterComp = () => {
     const { setAuth } = UseAuth();  
   const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
@@ -61,7 +61,7 @@ const LoginComp = () => {
         <h2>Login</h2>
         <form onSubmit={handleSubmit}>
           <label>username</label>
-          <input type="username" value={username} onChange={handleEmailChange} />
+          <input type="text" value={username} onChange={handleEmailChange} />
           <br />
           <label>Password:</label>
           <input type="password" value={password} onChange={handlePasswordChange} />
@@ -72,4 +72,4 @@ const LoginComp = () => {
     );
   };
 
-  export default LoginComp;
+  export default RegisterComp;

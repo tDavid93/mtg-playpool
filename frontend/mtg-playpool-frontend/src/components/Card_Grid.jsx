@@ -4,7 +4,8 @@ import Mtg_Card from "./Mtg_Card";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Search_Menu from "./Search_Menu";
 import "../styles.css"
-import apiHandler from "../api/apiHandler";
+import useAxiosPrivate from "../hooks/useAxiosPrivate";
+import { useNavigate, useLocation } from "react-router-dom";
 
 
 function Card_Grid() {
@@ -15,6 +16,10 @@ function Card_Grid() {
   const [error, setError] = useState(false);
   const [hasMore, setHasMore] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
+  const axiosPrivate = useAxiosPrivate();
+  const navigate = useNavigate();
+  const location = useLocation();
+
 
   const fetchData = async () => {
     if (loading || !hasMore) return;
@@ -25,8 +30,9 @@ function Card_Grid() {
     let url = `/search` ;
     
     try {
-      let response = await apiHandler.get( url, {page: page, search: searchQuery});
-      const data = await response.json();
+      let response = await axiosPrivate.get( url, {params:{page: page, search: searchQuery}});
+      const data = await response.data;
+      console.log(data);
         
         setCards(prevItems => [...prevItems, ...data]);
         setPage(prevPage => prevPage + 1);
@@ -37,6 +43,8 @@ function Card_Grid() {
     } catch (e) {
       console.log(e);
       setError(e);
+      
+      navigate('/login', { state: { from: location }, replace: true });
     } finally {
       setLoading(false);
     }
