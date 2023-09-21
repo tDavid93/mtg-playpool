@@ -4,9 +4,11 @@ import Mtg_Card from "./Mtg_Card";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Search_Menu from "./Search_Menu";
 import "../styles.css"
-import Axios from "axios";
+import apiHandler from "../api/apiHandler";
+
 
 function Card_Grid() {
+   
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(false);
   const [page, setPage] = useState(0);
@@ -20,10 +22,10 @@ function Card_Grid() {
     setLoading(true);
     setError(false);
 
-    let url = `/api/search?page=${page}&search=${searchQuery}` ;
+    let url = `/search` ;
     
     try {
-      let response = await fetch(url, { mode: 'cors' });
+      let response = await apiHandler.get( url, {page: page, search: searchQuery});
       const data = await response.json();
         
         setCards(prevItems => [...prevItems, ...data]);

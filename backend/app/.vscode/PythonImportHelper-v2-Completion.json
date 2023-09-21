@@ -1,0 +1,2097 @@
+[
+    {
+        "label": "Base",
+        "importPath": "mtgjson_db.database",
+        "description": "mtgjson_db.database",
+        "isExtraImport": true,
+        "detail": "mtgjson_db.database",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "importPath": "mtgjson_db.database",
+        "description": "mtgjson_db.database",
+        "isExtraImport": true,
+        "detail": "mtgjson_db.database",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "importPath": "mtgjson_db.database",
+        "description": "mtgjson_db.database",
+        "isExtraImport": true,
+        "detail": "mtgjson_db.database",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "importPath": "mtgjson_db.database",
+        "description": "mtgjson_db.database",
+        "isExtraImport": true,
+        "detail": "mtgjson_db.database",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "mtgjson_db.database",
+        "description": "mtgjson_db.database",
+        "isExtraImport": true,
+        "detail": "mtgjson_db.database",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "mtgjson_db.database",
+        "description": "mtgjson_db.database",
+        "isExtraImport": true,
+        "detail": "mtgjson_db.database",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "mtgjson_db.database",
+        "description": "mtgjson_db.database",
+        "isExtraImport": true,
+        "detail": "mtgjson_db.database",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "mtgjson_db.database",
+        "description": "mtgjson_db.database",
+        "isExtraImport": true,
+        "detail": "mtgjson_db.database",
+        "documentation": {}
+    },
+    {
+        "label": "sessionLocal",
+        "importPath": "mtgjson_db.database",
+        "description": "mtgjson_db.database",
+        "isExtraImport": true,
+        "detail": "mtgjson_db.database",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "importPath": "mtgjson_db.database",
+        "description": "mtgjson_db.database",
+        "isExtraImport": true,
+        "detail": "mtgjson_db.database",
+        "documentation": {}
+    },
+    {
+        "label": "engine",
+        "importPath": "mtgjson_db.database",
+        "description": "mtgjson_db.database",
+        "isExtraImport": true,
+        "detail": "mtgjson_db.database",
+        "documentation": {}
+    },
+    {
+        "label": "sessionLocal",
+        "importPath": "mtgjson_db.database",
+        "description": "mtgjson_db.database",
+        "isExtraImport": true,
+        "detail": "mtgjson_db.database",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Float",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Boolean",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Date",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "ForeignKey",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "create_engine",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Float",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Boolean",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Date",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "ForeignKey",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Float",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Boolean",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Date",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Column",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Integer",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Float",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "String",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Boolean",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "Date",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "ForeignKey",
+        "importPath": "sqlalchemy",
+        "description": "sqlalchemy",
+        "isExtraImport": true,
+        "detail": "sqlalchemy",
+        "documentation": {}
+    },
+    {
+        "label": "declarative_base",
+        "importPath": "sqlalchemy.ext.declarative",
+        "description": "sqlalchemy.ext.declarative",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.declarative",
+        "documentation": {}
+    },
+    {
+        "label": "declarative_base",
+        "importPath": "sqlalchemy.ext.declarative",
+        "description": "sqlalchemy.ext.declarative",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.declarative",
+        "documentation": {}
+    },
+    {
+        "label": "declarative_base",
+        "importPath": "sqlalchemy.ext.declarative",
+        "description": "sqlalchemy.ext.declarative",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.declarative",
+        "documentation": {}
+    },
+    {
+        "label": "declarative_base",
+        "importPath": "sqlalchemy.ext.declarative",
+        "description": "sqlalchemy.ext.declarative",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.declarative",
+        "documentation": {}
+    },
+    {
+        "label": "declarative_base",
+        "importPath": "sqlalchemy.ext.declarative",
+        "description": "sqlalchemy.ext.declarative",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.ext.declarative",
+        "documentation": {}
+    },
+    {
+        "label": "sqlalchemy.orm",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "relationship",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "sessionmaker",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "relationship",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "relationship",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "Session",
+        "importPath": "sqlalchemy.orm",
+        "description": "sqlalchemy.orm",
+        "isExtraImport": true,
+        "detail": "sqlalchemy.orm",
+        "documentation": {}
+    },
+    {
+        "label": "passlib.hash",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "passlib.hash",
+        "description": "passlib.hash",
+        "detail": "passlib.hash",
+        "documentation": {}
+    },
+    {
+        "label": "POSTGRES_URL",
+        "importPath": "settings",
+        "description": "settings",
+        "isExtraImport": true,
+        "detail": "settings",
+        "documentation": {}
+    },
+    {
+        "label": "ALGORITHM",
+        "importPath": "settings",
+        "description": "settings",
+        "isExtraImport": true,
+        "detail": "settings",
+        "documentation": {}
+    },
+    {
+        "label": "JWT_SECRET",
+        "importPath": "settings",
+        "description": "settings",
+        "isExtraImport": true,
+        "detail": "settings",
+        "documentation": {}
+    },
+    {
+        "label": "JWT_SECRET",
+        "importPath": "settings",
+        "description": "settings",
+        "isExtraImport": true,
+        "detail": "settings",
+        "documentation": {}
+    },
+    {
+        "label": "ACCESS_TOKEN_EXPIRE_MINUTES",
+        "importPath": "settings",
+        "description": "settings",
+        "isExtraImport": true,
+        "detail": "settings",
+        "documentation": {}
+    },
+    {
+        "label": "REFRESH_TOKEN_EXPIRE_MINUTES",
+        "importPath": "settings",
+        "description": "settings",
+        "isExtraImport": true,
+        "detail": "settings",
+        "documentation": {}
+    },
+    {
+        "label": "ALGORITHM",
+        "importPath": "settings",
+        "description": "settings",
+        "isExtraImport": true,
+        "detail": "settings",
+        "documentation": {}
+    },
+    {
+        "label": "JWT_REFRESH_SECRET_KEY",
+        "importPath": "settings",
+        "description": "settings",
+        "isExtraImport": true,
+        "detail": "settings",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Union",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "Any",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "List",
+        "importPath": "typing",
+        "description": "typing",
+        "isExtraImport": true,
+        "detail": "typing",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "date",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Request",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "FastAPI",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "Depends",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "HTTPException",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "status",
+        "importPath": "fastapi",
+        "description": "fastapi",
+        "isExtraImport": true,
+        "detail": "fastapi",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2PasswordBearer",
+        "importPath": "fastapi.security",
+        "description": "fastapi.security",
+        "isExtraImport": true,
+        "detail": "fastapi.security",
+        "documentation": {}
+    },
+    {
+        "label": "OAuth2PasswordRequestForm",
+        "importPath": "fastapi.security",
+        "description": "fastapi.security",
+        "isExtraImport": true,
+        "detail": "fastapi.security",
+        "documentation": {}
+    },
+    {
+        "label": "jwt",
+        "importPath": "jose",
+        "description": "jose",
+        "isExtraImport": true,
+        "detail": "jose",
+        "documentation": {}
+    },
+    {
+        "label": "jwt",
+        "importPath": "jose",
+        "description": "jose",
+        "isExtraImport": true,
+        "detail": "jose",
+        "documentation": {}
+    },
+    {
+        "label": "ValidationError",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "BaseModel",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "Field",
+        "importPath": "pydantic",
+        "description": "pydantic",
+        "isExtraImport": true,
+        "detail": "pydantic",
+        "documentation": {}
+    },
+    {
+        "label": "TokenPayload",
+        "importPath": "schemas.user_schemas",
+        "description": "schemas.user_schemas",
+        "isExtraImport": true,
+        "detail": "schemas.user_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SystemUser",
+        "importPath": "schemas.user_schemas",
+        "description": "schemas.user_schemas",
+        "isExtraImport": true,
+        "detail": "schemas.user_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserOut",
+        "importPath": "schemas.user_schemas",
+        "description": "schemas.user_schemas",
+        "isExtraImport": true,
+        "detail": "schemas.user_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserAuth",
+        "importPath": "schemas.user_schemas",
+        "description": "schemas.user_schemas",
+        "isExtraImport": true,
+        "detail": "schemas.user_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TokenSchema",
+        "importPath": "schemas.user_schemas",
+        "description": "schemas.user_schemas",
+        "isExtraImport": true,
+        "detail": "schemas.user_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserOut",
+        "importPath": "schemas.user_schemas",
+        "description": "schemas.user_schemas",
+        "isExtraImport": true,
+        "detail": "schemas.user_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SystemUser",
+        "importPath": "schemas.user_schemas",
+        "description": "schemas.user_schemas",
+        "isExtraImport": true,
+        "detail": "schemas.user_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserOut",
+        "importPath": "schemas.user_schemas",
+        "description": "schemas.user_schemas",
+        "isExtraImport": true,
+        "detail": "schemas.user_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserAuth",
+        "importPath": "schemas.user_schemas",
+        "description": "schemas.user_schemas",
+        "isExtraImport": true,
+        "detail": "schemas.user_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SystemUser",
+        "importPath": "schemas.user_schemas",
+        "description": "schemas.user_schemas",
+        "isExtraImport": true,
+        "detail": "schemas.user_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SystemUser",
+        "importPath": "schemas.user_schemas",
+        "description": "schemas.user_schemas",
+        "isExtraImport": true,
+        "detail": "schemas.user_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "mtgjson_db.users",
+        "description": "mtgjson_db.users",
+        "isExtraImport": true,
+        "detail": "mtgjson_db.users",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "mtgjson_db.users",
+        "description": "mtgjson_db.users",
+        "isExtraImport": true,
+        "detail": "mtgjson_db.users",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "mtgjson_db.users",
+        "description": "mtgjson_db.users",
+        "isExtraImport": true,
+        "detail": "mtgjson_db.users",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "importPath": "mtgjson_db.users",
+        "description": "mtgjson_db.users",
+        "isExtraImport": true,
+        "detail": "mtgjson_db.users",
+        "documentation": {}
+    },
+    {
+        "label": "RedirectResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "RedirectResponse",
+        "importPath": "fastapi.responses",
+        "description": "fastapi.responses",
+        "isExtraImport": true,
+        "detail": "fastapi.responses",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi.routing",
+        "description": "fastapi.routing",
+        "isExtraImport": true,
+        "detail": "fastapi.routing",
+        "documentation": {}
+    },
+    {
+        "label": "APIRouter",
+        "importPath": "fastapi.routing",
+        "description": "fastapi.routing",
+        "isExtraImport": true,
+        "detail": "fastapi.routing",
+        "documentation": {}
+    },
+    {
+        "label": "get_hashed_password",
+        "importPath": "routes.auth.utils",
+        "description": "routes.auth.utils",
+        "isExtraImport": true,
+        "detail": "routes.auth.utils",
+        "documentation": {}
+    },
+    {
+        "label": "create_access_token",
+        "importPath": "routes.auth.utils",
+        "description": "routes.auth.utils",
+        "isExtraImport": true,
+        "detail": "routes.auth.utils",
+        "documentation": {}
+    },
+    {
+        "label": "create_refresh_token",
+        "importPath": "routes.auth.utils",
+        "description": "routes.auth.utils",
+        "isExtraImport": true,
+        "detail": "routes.auth.utils",
+        "documentation": {}
+    },
+    {
+        "label": "verify_password",
+        "importPath": "routes.auth.utils",
+        "description": "routes.auth.utils",
+        "isExtraImport": true,
+        "detail": "routes.auth.utils",
+        "documentation": {}
+    },
+    {
+        "label": "get_hashed_password",
+        "importPath": "routes.auth.utils",
+        "description": "routes.auth.utils",
+        "isExtraImport": true,
+        "detail": "routes.auth.utils",
+        "documentation": {}
+    },
+    {
+        "label": "uuid4",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "uuid4",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "UUID",
+        "importPath": "uuid",
+        "description": "uuid",
+        "isExtraImport": true,
+        "detail": "uuid",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_user",
+        "importPath": "routes.auth.deps",
+        "description": "routes.auth.deps",
+        "isExtraImport": true,
+        "detail": "routes.auth.deps",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_user",
+        "importPath": "routes.auth.deps",
+        "description": "routes.auth.deps",
+        "isExtraImport": true,
+        "detail": "routes.auth.deps",
+        "documentation": {}
+    },
+    {
+        "label": "get_current_user",
+        "importPath": "routes.auth.deps",
+        "description": "routes.auth.deps",
+        "isExtraImport": true,
+        "detail": "routes.auth.deps",
+        "documentation": {}
+    },
+    {
+        "label": "fastapi.params",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "fastapi.params",
+        "description": "fastapi.params",
+        "detail": "fastapi.params",
+        "documentation": {}
+    },
+    {
+        "label": "CryptContext",
+        "importPath": "passlib.context",
+        "description": "passlib.context",
+        "isExtraImport": true,
+        "detail": "passlib.context",
+        "documentation": {}
+    },
+    {
+        "label": "jsonable_encoder",
+        "importPath": "fastapi.encoders",
+        "description": "fastapi.encoders",
+        "isExtraImport": true,
+        "detail": "fastapi.encoders",
+        "documentation": {}
+    },
+    {
+        "label": "jsonable_encoder",
+        "importPath": "fastapi.encoders",
+        "description": "fastapi.encoders",
+        "isExtraImport": true,
+        "detail": "fastapi.encoders",
+        "documentation": {}
+    },
+    {
+        "label": "jsonable_encoder",
+        "importPath": "fastapi.encoders",
+        "description": "fastapi.encoders",
+        "isExtraImport": true,
+        "detail": "fastapi.encoders",
+        "documentation": {}
+    },
+    {
+        "label": "Cards",
+        "importPath": "mtgjson_db.mtg_models",
+        "description": "mtgjson_db.mtg_models",
+        "isExtraImport": true,
+        "detail": "mtgjson_db.mtg_models",
+        "documentation": {}
+    },
+    {
+        "label": "Cards",
+        "importPath": "mtgjson_db.mtg_models",
+        "description": "mtgjson_db.mtg_models",
+        "isExtraImport": true,
+        "detail": "mtgjson_db.mtg_models",
+        "documentation": {}
+    },
+    {
+        "label": "CardIdentifiers",
+        "importPath": "mtgjson_db.mtg_models",
+        "description": "mtgjson_db.mtg_models",
+        "isExtraImport": true,
+        "detail": "mtgjson_db.mtg_models",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "mtgjson_db.mtg_models",
+        "description": "mtgjson_db.mtg_models",
+        "isExtraImport": true,
+        "detail": "mtgjson_db.mtg_models",
+        "documentation": {}
+    },
+    {
+        "label": "CORSMiddleware",
+        "importPath": "fastapi.middleware.cors",
+        "description": "fastapi.middleware.cors",
+        "isExtraImport": true,
+        "detail": "fastapi.middleware.cors",
+        "documentation": {}
+    },
+    {
+        "label": "search",
+        "importPath": "routes",
+        "description": "routes",
+        "isExtraImport": true,
+        "detail": "routes",
+        "documentation": {}
+    },
+    {
+        "label": "profile",
+        "importPath": "routes",
+        "description": "routes",
+        "isExtraImport": true,
+        "detail": "routes",
+        "documentation": {}
+    },
+    {
+        "label": "register",
+        "importPath": "routes.auth",
+        "description": "routes.auth",
+        "isExtraImport": true,
+        "detail": "routes.auth",
+        "documentation": {}
+    },
+    {
+        "label": "login",
+        "importPath": "routes.auth",
+        "description": "routes.auth",
+        "isExtraImport": true,
+        "detail": "routes.auth",
+        "documentation": {}
+    },
+    {
+        "label": "me",
+        "importPath": "routes.auth",
+        "description": "routes.auth",
+        "isExtraImport": true,
+        "detail": "routes.auth",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "DeckCards",
+        "kind": 6,
+        "importPath": "mtgjson_db.custom_decks",
+        "description": "mtgjson_db.custom_decks",
+        "peekOfCode": "class DeckCards(Base):\n    __tablename__ = 'deck_cards'\n    deck_id = Column(Integer, ForeignKey('decks.id'), primary_key=True)\n    card_id = Column(Integer, ForeignKey('cards.id'), primary_key=True)\n    quantity = Column(Integer)\n    deck = relationship(\"Decks\", back_populates=\"deck_cards\")\n    card = relationship(\"Cards\", back_populates=\"deck_cards\")\nclass Decks(Base):\n    __tablename__ = 'decks'\n    id = Column(Integer, primary_key=True, autoincrement=True)",
+        "detail": "mtgjson_db.custom_decks",
+        "documentation": {}
+    },
+    {
+        "label": "Decks",
+        "kind": 6,
+        "importPath": "mtgjson_db.custom_decks",
+        "description": "mtgjson_db.custom_decks",
+        "peekOfCode": "class Decks(Base):\n    __tablename__ = 'decks'\n    id = Column(Integer, primary_key=True, autoincrement=True)\n    name = Column(String(255), nullable=False)\n    description = Column(String(255))\n    format = Column(String(255))\n    user_id = Column(Integer, ForeignKey('user.id'))\n    user = relationship(\"User\", back_populates=\"decks\")",
+        "detail": "mtgjson_db.custom_decks",
+        "documentation": {}
+    },
+    {
+        "label": "get_db",
+        "kind": 2,
+        "importPath": "mtgjson_db.database",
+        "description": "mtgjson_db.database",
+        "peekOfCode": "def get_db():\n    db = sessionLocal()\n    try:\n        yield db\n    finally:\n        db.close()",
+        "detail": "mtgjson_db.database",
+        "documentation": {}
+    },
+    {
+        "label": "engine",
+        "kind": 5,
+        "importPath": "mtgjson_db.database",
+        "description": "mtgjson_db.database",
+        "peekOfCode": "engine = create_engine(POSTGRES_URL)\nsessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)\nBase = declarative_base()\ndef get_db():\n    db = sessionLocal()\n    try:\n        yield db\n    finally:\n        db.close()",
+        "detail": "mtgjson_db.database",
+        "documentation": {}
+    },
+    {
+        "label": "sessionLocal",
+        "kind": 5,
+        "importPath": "mtgjson_db.database",
+        "description": "mtgjson_db.database",
+        "peekOfCode": "sessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)\nBase = declarative_base()\ndef get_db():\n    db = sessionLocal()\n    try:\n        yield db\n    finally:\n        db.close()",
+        "detail": "mtgjson_db.database",
+        "documentation": {}
+    },
+    {
+        "label": "Base",
+        "kind": 5,
+        "importPath": "mtgjson_db.database",
+        "description": "mtgjson_db.database",
+        "peekOfCode": "Base = declarative_base()\ndef get_db():\n    db = sessionLocal()\n    try:\n        yield db\n    finally:\n        db.close()",
+        "detail": "mtgjson_db.database",
+        "documentation": {}
+    },
+    {
+        "label": "Meta",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models",
+        "description": "mtgjson_db.mtg_models",
+        "peekOfCode": "class Meta(Base):\n    __tablename__ = 'meta'\n    date = Column(Date, primary_key=True)\n    version = Column(String)\nclass Sets(Base):\n    __tablename__ = 'sets'\n    basesetsize = Column(Integer)\n    block = Column(String)\n    cardspheresetid = Column(Integer)\n    code = Column(String(8), primary_key=True, unique=True, nullable=False)",
+        "detail": "mtgjson_db.mtg_models",
+        "documentation": {}
+    },
+    {
+        "label": "Sets",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models",
+        "description": "mtgjson_db.mtg_models",
+        "peekOfCode": "class Sets(Base):\n    __tablename__ = 'sets'\n    basesetsize = Column(Integer)\n    block = Column(String)\n    cardspheresetid = Column(Integer)\n    code = Column(String(8), primary_key=True, unique=True, nullable=False)\n    isfoilonly = Column(Boolean)\n    isforeignonly = Column(Boolean)\n    isnonfoilonly = Column(Boolean)\n    isonlineonly = Column(Boolean)",
+        "detail": "mtgjson_db.mtg_models",
+        "documentation": {}
+    },
+    {
+        "label": "Cards",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models",
+        "description": "mtgjson_db.mtg_models",
+        "peekOfCode": "class Cards(Base):\n    __tablename__ = 'cards'\n    artist = Column(String)\n    artistids = Column(String)\n    asciiname = Column(String)\n    attractionlights = Column(String)\n    availability = Column(String)\n    boostertypes = Column(String)\n    bordercolor = Column(String)\n    cardparts = Column(String)",
+        "detail": "mtgjson_db.mtg_models",
+        "documentation": {}
+    },
+    {
+        "label": "Tokens",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models",
+        "description": "mtgjson_db.mtg_models",
+        "peekOfCode": "class Tokens(Base):\n    __tablename__ = 'tokens'\n    artist = Column(String)\n    artistids = Column(String)\n    asciiname = Column(String)\n    availability = Column(String)\n    boostertypes = Column(String)\n    bordercolor = Column(String)\n    coloridentity = Column(String)\n    colors = Column(String)",
+        "detail": "mtgjson_db.mtg_models",
+        "documentation": {}
+    },
+    {
+        "label": "CardIdentifiers",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models",
+        "description": "mtgjson_db.mtg_models",
+        "peekOfCode": "class CardIdentifiers(Base):\n    __tablename__ = 'cardidentifiers'\n    cardkingdometchedid = Column(String)\n    cardkingdomfoilid = Column(String)\n    cardkingdomid = Column(String)\n    cardsphereid = Column(String)\n    mcmid = Column(String)\n    mcmmetaid = Column(String)\n    mtgarenaid = Column(String)\n    mtgjsonfoilversionid = Column(String)",
+        "detail": "mtgjson_db.mtg_models",
+        "documentation": {}
+    },
+    {
+        "label": "CardLegalities",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models",
+        "description": "mtgjson_db.mtg_models",
+        "peekOfCode": "class CardLegalities(Base):\n    __tablename__ = 'cardlegalities'\n    alchemy = Column(String)\n    brawl = Column(String)\n    commander = Column(String)\n    duel = Column(String)\n    explorer = Column(String)\n    future = Column(String)\n    gladiator = Column(String)\n    historic = Column(String)",
+        "detail": "mtgjson_db.mtg_models",
+        "documentation": {}
+    },
+    {
+        "label": "CardRulings",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models",
+        "description": "mtgjson_db.mtg_models",
+        "peekOfCode": "class CardRulings(Base):\n    __tablename__ = 'cardrulings'\n    date = Column(Date)\n    text = Column(String)\n    uuid = Column(String(36), primary_key=True, nullable=False)\nclass CardForeignData(Base):\n    __tablename__ = 'cardforeignData'\n    facename = Column(String)\n    flavortext = Column(String)\n    language = Column(String)",
+        "detail": "mtgjson_db.mtg_models",
+        "documentation": {}
+    },
+    {
+        "label": "CardForeignData",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models",
+        "description": "mtgjson_db.mtg_models",
+        "peekOfCode": "class CardForeignData(Base):\n    __tablename__ = 'cardforeignData'\n    facename = Column(String)\n    flavortext = Column(String)\n    language = Column(String)\n    multiverseid = Column(Integer)\n    name = Column(String)\n    text = Column(String)\n    type = Column(String)\n    uuid = Column(String, primary_key=True, nullable=False)",
+        "detail": "mtgjson_db.mtg_models",
+        "documentation": {}
+    },
+    {
+        "label": "CardPurchaseUrls",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models",
+        "description": "mtgjson_db.mtg_models",
+        "peekOfCode": "class CardPurchaseUrls(Base):\n    __tablename__ = 'cardpurchaseurls'\n    cardkingdom = Column(String)\n    cardkingdometched = Column(String)\n    cardkingdomfoil = Column(String)\n    cardmarket = Column(String)\n    tcgplayer = Column(String)\n    tcgplayeretched = Column(String)\n    uuid = Column(String, primary_key=True, nullable=False)\nclass TokenIdentifiers(Base):",
+        "detail": "mtgjson_db.mtg_models",
+        "documentation": {}
+    },
+    {
+        "label": "TokenIdentifiers",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models",
+        "description": "mtgjson_db.mtg_models",
+        "peekOfCode": "class TokenIdentifiers(Base):\n    __tablename__ = 'tokenidentifiers'\n    cardkingdometchedid = Column(String)\n    cardkingdomfoilid = Column(String)\n    cardkingdomid = Column(String)\n    cardsphereid = Column(String)\n    mcmid = Column(String)\n    mcmmetaid = Column(String)\n    mtgarenaid = Column(String)\n    mtgjsonfoilversionid = Column(String)",
+        "detail": "mtgjson_db.mtg_models",
+        "documentation": {}
+    },
+    {
+        "label": "SetTranslations",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models",
+        "description": "mtgjson_db.mtg_models",
+        "peekOfCode": "class SetTranslations(Base):\n    __tablename__ = 'settranslations'\n    language = Column(String)\n    translation = Column(String)\n    uuid = Column(String(36), primary_key=True, nullable=False)\nclass SetBoosterContents(Base):\n    __tablename__ = 'setboostercontents'\n    boosterindex = Column(Integer)\n    boostername = Column(String(255))\n    setcode = Column(String(20), primary_key=True, nullable=False)",
+        "detail": "mtgjson_db.mtg_models",
+        "documentation": {}
+    },
+    {
+        "label": "SetBoosterContents",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models",
+        "description": "mtgjson_db.mtg_models",
+        "peekOfCode": "class SetBoosterContents(Base):\n    __tablename__ = 'setboostercontents'\n    boosterindex = Column(Integer)\n    boostername = Column(String(255))\n    setcode = Column(String(20), primary_key=True, nullable=False)\n    sheetname = Column(String(255))\n    sheetpicks = Column(Integer)\nclass SetBoosterContentWeights(Base):\n    __tablename__ = 'setboostercontentweights'\n    boosterindex = Column(Integer)",
+        "detail": "mtgjson_db.mtg_models",
+        "documentation": {}
+    },
+    {
+        "label": "SetBoosterContentWeights",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models",
+        "description": "mtgjson_db.mtg_models",
+        "peekOfCode": "class SetBoosterContentWeights(Base):\n    __tablename__ = 'setboostercontentweights'\n    boosterindex = Column(Integer)\n    boostername = Column(String(255))\n    boosterweight = Column(Integer)\n    setcode = Column(String(20), primary_key=True, nullable=False)\nclass SetBoosterSheets(Base):\n    __tablename__ = 'setboostersheets'\n    setcode = Column(String(20), primary_key=True, nullable=False)\n    sheethasbalancecolors = Column(Boolean)",
+        "detail": "mtgjson_db.mtg_models",
+        "documentation": {}
+    },
+    {
+        "label": "SetBoosterSheets",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models",
+        "description": "mtgjson_db.mtg_models",
+        "peekOfCode": "class SetBoosterSheets(Base):\n    __tablename__ = 'setboostersheets'\n    setcode = Column(String(20), primary_key=True, nullable=False)\n    sheethasbalancecolors = Column(Boolean)\n    sheetisfoil = Column(Boolean)\n    sheetname = Column(String(255))\nclass SetBoosterSheetCards(Base):\n    __tablename__ = 'setboostersheetcards'\n    carduuid = Column(String(36), primary_key=True, nullable=False)\n    cardweight = Column(Integer)",
+        "detail": "mtgjson_db.mtg_models",
+        "documentation": {}
+    },
+    {
+        "label": "SetBoosterSheetCards",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models",
+        "description": "mtgjson_db.mtg_models",
+        "peekOfCode": "class SetBoosterSheetCards(Base):\n    __tablename__ = 'setboostersheetcards'\n    carduuid = Column(String(36), primary_key=True, nullable=False)\n    cardweight = Column(Integer)\n    setcode = Column(String(20))\n    sheetname = Column(String(255))\n# Create an SQLite database engine and create tables\nclass Collection(Base):\n    __tablename__ = 'collection'\n    id = Column(Integer,primary_key=True,autoincrement=True)",
+        "detail": "mtgjson_db.mtg_models",
+        "documentation": {}
+    },
+    {
+        "label": "Collection",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models",
+        "description": "mtgjson_db.mtg_models",
+        "peekOfCode": "class Collection(Base):\n    __tablename__ = 'collection'\n    id = Column(Integer,primary_key=True,autoincrement=True)\n    owner = Column(String(255))\nclass CardCollection(Base):\n    __tablename__ = 'cardcollection'\n    id = Column(Integer,primary_key=True,autoincrement=True)\n    collection_id = Column(Integer)\n    card_uuid = Column(String(36))\n    quantity = Column(Integer)",
+        "detail": "mtgjson_db.mtg_models",
+        "documentation": {}
+    },
+    {
+        "label": "CardCollection",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models",
+        "description": "mtgjson_db.mtg_models",
+        "peekOfCode": "class CardCollection(Base):\n    __tablename__ = 'cardcollection'\n    id = Column(Integer,primary_key=True,autoincrement=True)\n    collection_id = Column(Integer)\n    card_uuid = Column(String(36))\n    quantity = Column(Integer)",
+        "detail": "mtgjson_db.mtg_models",
+        "documentation": {}
+    },
+    {
+        "label": "Meta",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models_sqlite",
+        "description": "mtgjson_db.mtg_models_sqlite",
+        "peekOfCode": "class Meta(Base):\n    __tablename__ = 'meta'\n    date = Column(Date, primary_key=True)\n    version = Column(String)\nclass Sets(Base):\n    __tablename__ = 'sets'\n    baseSetSize = Column(Integer)\n    block = Column(String)\n    cardsphereSetId = Column(Integer)\n    code = Column(String(8), primary_key=True, unique=True, nullable=False)",
+        "detail": "mtgjson_db.mtg_models_sqlite",
+        "documentation": {}
+    },
+    {
+        "label": "Sets",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models_sqlite",
+        "description": "mtgjson_db.mtg_models_sqlite",
+        "peekOfCode": "class Sets(Base):\n    __tablename__ = 'sets'\n    baseSetSize = Column(Integer)\n    block = Column(String)\n    cardsphereSetId = Column(Integer)\n    code = Column(String(8), primary_key=True, unique=True, nullable=False)\n    isFoilOnly = Column(Boolean)\n    isForeignOnly = Column(Boolean)\n    isNonFoilOnly = Column(Boolean)\n    isOnlineOnly = Column(Boolean)",
+        "detail": "mtgjson_db.mtg_models_sqlite",
+        "documentation": {}
+    },
+    {
+        "label": "Cards",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models_sqlite",
+        "description": "mtgjson_db.mtg_models_sqlite",
+        "peekOfCode": "class Cards(Base):\n    __tablename__ = 'cards'\n    artist = Column(String)\n    artistIds = Column(String)\n    asciiName = Column(String)\n    attractionLights = Column(String)\n    availability = Column(String)\n    boosterTypes = Column(String)\n    borderColor = Column(String)\n    cardParts = Column(String)",
+        "detail": "mtgjson_db.mtg_models_sqlite",
+        "documentation": {}
+    },
+    {
+        "label": "Tokens",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models_sqlite",
+        "description": "mtgjson_db.mtg_models_sqlite",
+        "peekOfCode": "class Tokens(Base):\n    __tablename__ = 'tokens'\n    artist = Column(String)\n    artistIds = Column(String)\n    asciiName = Column(String)\n    availability = Column(String)\n    boosterTypes = Column(String)\n    borderColor = Column(String)\n    colorIdentity = Column(String)\n    colors = Column(String)",
+        "detail": "mtgjson_db.mtg_models_sqlite",
+        "documentation": {}
+    },
+    {
+        "label": "CardIdentifiers",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models_sqlite",
+        "description": "mtgjson_db.mtg_models_sqlite",
+        "peekOfCode": "class CardIdentifiers(Base):\n    __tablename__ = 'cardIdentifiers'\n    cardKingdomEtchedId = Column(String)\n    cardKingdomFoilId = Column(String)\n    cardKingdomId = Column(String)\n    cardsphereId = Column(String)\n    mcmId = Column(String)\n    mcmMetaId = Column(String)\n    mtgArenaId = Column(String)\n    mtgjsonFoilVersionId = Column(String)",
+        "detail": "mtgjson_db.mtg_models_sqlite",
+        "documentation": {}
+    },
+    {
+        "label": "CardLegalities",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models_sqlite",
+        "description": "mtgjson_db.mtg_models_sqlite",
+        "peekOfCode": "class CardLegalities(Base):\n    __tablename__ = 'cardLegalities'\n    alchemy = Column(String)\n    brawl = Column(String)\n    commander = Column(String)\n    duel = Column(String)\n    explorer = Column(String)\n    future = Column(String)\n    gladiator = Column(String)\n    historic = Column(String)",
+        "detail": "mtgjson_db.mtg_models_sqlite",
+        "documentation": {}
+    },
+    {
+        "label": "CardRulings",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models_sqlite",
+        "description": "mtgjson_db.mtg_models_sqlite",
+        "peekOfCode": "class CardRulings(Base):\n    __tablename__ = 'cardRulings'\n    date = Column(Date)\n    text = Column(String)\n    uuid = Column(String(36), primary_key=True, nullable=False)\nclass CardForeignData(Base):\n    __tablename__ = 'cardForeignData'\n    faceName = Column(String)\n    flavorText = Column(String)\n    language = Column(String)",
+        "detail": "mtgjson_db.mtg_models_sqlite",
+        "documentation": {}
+    },
+    {
+        "label": "CardForeignData",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models_sqlite",
+        "description": "mtgjson_db.mtg_models_sqlite",
+        "peekOfCode": "class CardForeignData(Base):\n    __tablename__ = 'cardForeignData'\n    faceName = Column(String)\n    flavorText = Column(String)\n    language = Column(String)\n    multiverseId = Column(Integer)\n    name = Column(String)\n    text = Column(String)\n    type = Column(String)\n    uuid = Column(String, primary_key=True, nullable=False)",
+        "detail": "mtgjson_db.mtg_models_sqlite",
+        "documentation": {}
+    },
+    {
+        "label": "CardPurchaseUrls",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models_sqlite",
+        "description": "mtgjson_db.mtg_models_sqlite",
+        "peekOfCode": "class CardPurchaseUrls(Base):\n    __tablename__ = 'cardPurchaseUrls'\n    cardKingdom = Column(String)\n    cardKingdomEtched = Column(String)\n    cardKingdomFoil = Column(String)\n    cardmarket = Column(String)\n    tcgplayer = Column(String)\n    tcgplayerEtched = Column(String)\n    uuid = Column(String, primary_key=True, nullable=False)\nclass TokenIdentifiers(Base):",
+        "detail": "mtgjson_db.mtg_models_sqlite",
+        "documentation": {}
+    },
+    {
+        "label": "TokenIdentifiers",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models_sqlite",
+        "description": "mtgjson_db.mtg_models_sqlite",
+        "peekOfCode": "class TokenIdentifiers(Base):\n    __tablename__ = 'tokenIdentifiers'\n    cardKingdomEtchedId = Column(String)\n    cardKingdomFoilId = Column(String)\n    cardKingdomId = Column(String)\n    cardsphereId = Column(String)\n    mcmId = Column(String)\n    mcmMetaId = Column(String)\n    mtgArenaId = Column(String)\n    mtgjsonFoilVersionId = Column(String)",
+        "detail": "mtgjson_db.mtg_models_sqlite",
+        "documentation": {}
+    },
+    {
+        "label": "SetTranslations",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models_sqlite",
+        "description": "mtgjson_db.mtg_models_sqlite",
+        "peekOfCode": "class SetTranslations(Base):\n    __tablename__ = 'setTranslations'\n    language = Column(String)\n    translation = Column(String)\n    uuid = Column(String(36), primary_key=True, nullable=False)\nclass SetBoosterContents(Base):\n    __tablename__ = 'setBoosterContents'\n    boosterIndex = Column(Integer)\n    boosterName = Column(String(255))\n    setCode = Column(String(20), primary_key=True, nullable=False)",
+        "detail": "mtgjson_db.mtg_models_sqlite",
+        "documentation": {}
+    },
+    {
+        "label": "SetBoosterContents",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models_sqlite",
+        "description": "mtgjson_db.mtg_models_sqlite",
+        "peekOfCode": "class SetBoosterContents(Base):\n    __tablename__ = 'setBoosterContents'\n    boosterIndex = Column(Integer)\n    boosterName = Column(String(255))\n    setCode = Column(String(20), primary_key=True, nullable=False)\n    sheetName = Column(String(255))\n    sheetPicks = Column(Integer)\nclass SetBoosterContentWeights(Base):\n    __tablename__ = 'setBoosterContentWeights'\n    boosterIndex = Column(Integer)",
+        "detail": "mtgjson_db.mtg_models_sqlite",
+        "documentation": {}
+    },
+    {
+        "label": "SetBoosterContentWeights",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models_sqlite",
+        "description": "mtgjson_db.mtg_models_sqlite",
+        "peekOfCode": "class SetBoosterContentWeights(Base):\n    __tablename__ = 'setBoosterContentWeights'\n    boosterIndex = Column(Integer)\n    boosterName = Column(String(255))\n    boosterWeight = Column(Integer)\n    setCode = Column(String(20), primary_key=True, nullable=False)\nclass SetBoosterSheets(Base):\n    __tablename__ = 'setBoosterSheets'\n    setCode = Column(String(20), primary_key=True, nullable=False)\n    sheetHasBalanceColors = Column(Boolean)",
+        "detail": "mtgjson_db.mtg_models_sqlite",
+        "documentation": {}
+    },
+    {
+        "label": "SetBoosterSheets",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models_sqlite",
+        "description": "mtgjson_db.mtg_models_sqlite",
+        "peekOfCode": "class SetBoosterSheets(Base):\n    __tablename__ = 'setBoosterSheets'\n    setCode = Column(String(20), primary_key=True, nullable=False)\n    sheetHasBalanceColors = Column(Boolean)\n    sheetIsFoil = Column(Boolean)\n    sheetName = Column(String(255))\nclass SetBoosterSheetCards(Base):\n    __tablename__ = 'setBoosterSheetCards'\n    cardUuid = Column(String(36), primary_key=True, nullable=False)\n    cardWeight = Column(Integer)",
+        "detail": "mtgjson_db.mtg_models_sqlite",
+        "documentation": {}
+    },
+    {
+        "label": "SetBoosterSheetCards",
+        "kind": 6,
+        "importPath": "mtgjson_db.mtg_models_sqlite",
+        "description": "mtgjson_db.mtg_models_sqlite",
+        "peekOfCode": "class SetBoosterSheetCards(Base):\n    __tablename__ = 'setBoosterSheetCards'\n    cardUuid = Column(String(36), primary_key=True, nullable=False)\n    cardWeight = Column(Integer)\n    setCode = Column(String(20))\n    sheetName = Column(String(255))\n# Create an SQLite database engine and create tables",
+        "detail": "mtgjson_db.mtg_models_sqlite",
+        "documentation": {}
+    },
+    {
+        "label": "User",
+        "kind": 6,
+        "importPath": "mtgjson_db.users",
+        "description": "mtgjson_db.users",
+        "peekOfCode": "class User(Base):\n    __tablename__ = 'user'\n    id = Column(Integer,primary_key=True,autoincrement=True)\n    username = Column(String(255))\n    password = Column(String(255))",
+        "detail": "mtgjson_db.users",
+        "documentation": {}
+    },
+    {
+        "label": "reuseable_oauth",
+        "kind": 5,
+        "importPath": "routes.auth.deps",
+        "description": "routes.auth.deps",
+        "peekOfCode": "reuseable_oauth = OAuth2PasswordBearer(\n    tokenUrl=\"/api/login\",\n    scheme_name=\"JWT\"\n)\nasync def get_current_user(token: str = Depends(reuseable_oauth), db: Session() = Depends(get_db)) -> SystemUser:\n    try:\n        payload = jwt.decode(\n            token, JWT_SECRET, algorithms=[ALGORITHM]\n        )\n        token_data = TokenPayload(**payload)",
+        "detail": "routes.auth.deps",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "routes.auth.login",
+        "description": "routes.auth.login",
+        "peekOfCode": "router = APIRouter()\n@router.post('/api/login', summary=\"Create access and refresh tokens for user\", response_model=TokenSchema)\nasync def login(form_data: OAuth2PasswordRequestForm = Depends(), db: Session = Depends(get_db)):\n    user = db.query(User).filter(User.username == form_data.username).first()\n    if user is None:\n        raise HTTPException(\n            status_code=status.HTTP_400_BAD_REQUEST,\n            detail=\"Incorrect username or password\"\n        )\n    hashed_pass = user.password",
+        "detail": "routes.auth.login",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "routes.auth.me",
+        "description": "routes.auth.me",
+        "peekOfCode": "router = APIRouter()\n@router.get('/api/me', summary='Get details of currently logged in user', response_model=UserOut)\nasync def get_me(user: SystemUser = Depends(get_current_user)):\n    return user",
+        "detail": "routes.auth.me",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "routes.auth.register",
+        "description": "routes.auth.register",
+        "peekOfCode": "router = APIRouter()\n@router.post('/api/signup', summary=\"Create new user\", response_model=UserOut)\nasync def create_user(data: UserAuth, db: Session = Depends(get_db)):\n    # querying database to check if user already exist\n    user = db.query(User).filter(User.username == data.username).first()\n    if user is not None:\n            raise HTTPException(\n            status_code=status.HTTP_400_BAD_REQUEST,\n            detail=\"User with this email already exist\"\n        )",
+        "detail": "routes.auth.register",
+        "documentation": {}
+    },
+    {
+        "label": "get_hashed_password",
+        "kind": 2,
+        "importPath": "routes.auth.utils",
+        "description": "routes.auth.utils",
+        "peekOfCode": "def get_hashed_password(password: str) -> str:\n    return password_context.hash(password)\ndef verify_password(password: str, hashed_pass: str) -> bool:\n    return password_context.verify(password, hashed_pass)\ndef create_access_token(subject: Union[str, Any], expires_delta: int = None) -> str:\n    if expires_delta is not None:\n        expires_delta = datetime.utcnow() + expires_delta\n    else:\n        expires_delta = datetime.utcnow() + timedelta(minutes=int(ACCESS_TOKEN_EXPIRE_MINUTES))\n    to_encode = {\"exp\": expires_delta, \"sub\": str(subject)}",
+        "detail": "routes.auth.utils",
+        "documentation": {}
+    },
+    {
+        "label": "verify_password",
+        "kind": 2,
+        "importPath": "routes.auth.utils",
+        "description": "routes.auth.utils",
+        "peekOfCode": "def verify_password(password: str, hashed_pass: str) -> bool:\n    return password_context.verify(password, hashed_pass)\ndef create_access_token(subject: Union[str, Any], expires_delta: int = None) -> str:\n    if expires_delta is not None:\n        expires_delta = datetime.utcnow() + expires_delta\n    else:\n        expires_delta = datetime.utcnow() + timedelta(minutes=int(ACCESS_TOKEN_EXPIRE_MINUTES))\n    to_encode = {\"exp\": expires_delta, \"sub\": str(subject)}\n    encoded_jwt = jwt.encode(to_encode, JWT_SECRET, ALGORITHM)\n    return encoded_jwt",
+        "detail": "routes.auth.utils",
+        "documentation": {}
+    },
+    {
+        "label": "create_access_token",
+        "kind": 2,
+        "importPath": "routes.auth.utils",
+        "description": "routes.auth.utils",
+        "peekOfCode": "def create_access_token(subject: Union[str, Any], expires_delta: int = None) -> str:\n    if expires_delta is not None:\n        expires_delta = datetime.utcnow() + expires_delta\n    else:\n        expires_delta = datetime.utcnow() + timedelta(minutes=int(ACCESS_TOKEN_EXPIRE_MINUTES))\n    to_encode = {\"exp\": expires_delta, \"sub\": str(subject)}\n    encoded_jwt = jwt.encode(to_encode, JWT_SECRET, ALGORITHM)\n    return encoded_jwt\ndef create_refresh_token(subject: Union[str, Any], expires_delta: int = None) -> str:\n    if expires_delta is not None:",
+        "detail": "routes.auth.utils",
+        "documentation": {}
+    },
+    {
+        "label": "create_refresh_token",
+        "kind": 2,
+        "importPath": "routes.auth.utils",
+        "description": "routes.auth.utils",
+        "peekOfCode": "def create_refresh_token(subject: Union[str, Any], expires_delta: int = None) -> str:\n    if expires_delta is not None:\n        expires_delta = datetime.utcnow() + expires_delta\n    else:\n        expires_delta = datetime.utcnow() + timedelta(minutes=int(REFRESH_TOKEN_EXPIRE_MINUTES))\n    to_encode = {\"exp\": expires_delta, \"sub\": str(subject)}\n    encoded_jwt = jwt.encode(to_encode, JWT_REFRESH_SECRET_KEY, ALGORITHM)\n    return encoded_jwt",
+        "detail": "routes.auth.utils",
+        "documentation": {}
+    },
+    {
+        "label": "password_context",
+        "kind": 5,
+        "importPath": "routes.auth.utils",
+        "description": "routes.auth.utils",
+        "peekOfCode": "password_context = CryptContext(schemes=[\"bcrypt\"], deprecated=\"auto\")\ndef get_hashed_password(password: str) -> str:\n    return password_context.hash(password)\ndef verify_password(password: str, hashed_pass: str) -> bool:\n    return password_context.verify(password, hashed_pass)\ndef create_access_token(subject: Union[str, Any], expires_delta: int = None) -> str:\n    if expires_delta is not None:\n        expires_delta = datetime.utcnow() + expires_delta\n    else:\n        expires_delta = datetime.utcnow() + timedelta(minutes=int(ACCESS_TOKEN_EXPIRE_MINUTES))",
+        "detail": "routes.auth.utils",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "routes.profile",
+        "description": "routes.profile",
+        "peekOfCode": "router = APIRouter()\n@router.get(\"/api/profile\")\nasync def get_profile(db: Session = Depends(get_db), user: SystemUser = Depends(get_current_user)):\n    print(user)\n    user_out = db.query(User).filter(User.username == user.username).first()\n    print(user_out)\n    return jsonable_encoder(user_out)",
+        "detail": "routes.profile",
+        "documentation": {}
+    },
+    {
+        "label": "build_network_card",
+        "kind": 2,
+        "importPath": "routes.search",
+        "description": "routes.search",
+        "peekOfCode": "def build_network_card(card:Cards, db):\n    n_card = {\n        'name' : card.name,\n        'uuid' : card.uuid,\n        'img_url': get_image_url(card,db)\n    }\n    return n_card\ndef get_image_url(card:Cards, db:Session = Depends(sessionLocal)):\n    \"\"\"returns the url of the image for the card\"\"\"\n    try:",
+        "detail": "routes.search",
+        "documentation": {}
+    },
+    {
+        "label": "get_image_url",
+        "kind": 2,
+        "importPath": "routes.search",
+        "description": "routes.search",
+        "peekOfCode": "def get_image_url(card:Cards, db:Session = Depends(sessionLocal)):\n    \"\"\"returns the url of the image for the card\"\"\"\n    try:\n        cardid = db.query(CardIdentifiers).filter(CardIdentifiers.uuid == card.uuid).first()\n    except Exception as e:\n        print (e)\n        return \"https://cards.scryfall.io/art_crop/front/b/d/bd8fa327-dd41-4737-8f19-2cf5eb1f7cdd.jpg\"        \n    scryfallid = cardid.scryfallid\n    fileType = \"normal\"\n    #fileType = \"art_crop\"",
+        "detail": "routes.search",
+        "documentation": {}
+    },
+    {
+        "label": "router",
+        "kind": 5,
+        "importPath": "routes.search",
+        "description": "routes.search",
+        "peekOfCode": "router = APIRouter()\n@router.get(\"/api/search\")\nasync def search_cards(request : Request,search: str, page: int = 0, db: Session = Depends(get_db)):\n    page_limit = 30\n    cards = db.query(Cards).filter(Cards.language == 'English').filter(Cards.name.ilike(f'%{search}%',)).order_by(Cards.name).offset(page_limit*page).limit(page_limit).all()\n    net_card = []\n    for card in cards:\n        net_card.append(build_network_card(card, db))\n    return jsonable_encoder(net_card)\n@router.get(\"/api/cardslist\")",
+        "detail": "routes.search",
+        "documentation": {}
+    },
+    {
+        "label": "MetaBase",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class MetaBase(BaseModel):\n    date: date\n    version: str\nclass MetaCreate(MetaBase):\n    pass\nclass SetsBase(BaseModel):\n    baseSetSize: int\n    block: str\n    cardsphereSetId: int\n    code: str",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "MetaCreate",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class MetaCreate(MetaBase):\n    pass\nclass SetsBase(BaseModel):\n    baseSetSize: int\n    block: str\n    cardsphereSetId: int\n    code: str\n    isFoilOnly: bool\n    isForeignOnly: bool\n    isNonFoilOnly: bool",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SetsBase",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class SetsBase(BaseModel):\n    baseSetSize: int\n    block: str\n    cardsphereSetId: int\n    code: str\n    isFoilOnly: bool\n    isForeignOnly: bool\n    isNonFoilOnly: bool\n    isOnlineOnly: bool\n    isPartialPreview: bool",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SetsCreate",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class SetsCreate(SetsBase):\n    pass\nclass CardsBase(BaseModel):\n    artist: str\n    artistIds: str\n    asciiName: str\n    attractionLights: str\n    availability: str\n    boosterTypes: str\n    borderColor: str",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CardsBase",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class CardsBase(BaseModel):\n    artist: str\n    artistIds: str\n    asciiName: str\n    attractionLights: str\n    availability: str\n    boosterTypes: str\n    borderColor: str\n    cardParts: str\n    colorIdentity: str",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CardsCreate",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class CardsCreate(CardsBase):\n    pass\nclass TokensBase(BaseModel):\n    artist: str\n    artistIds: str\n    asciiName: str\n    availability: str\n    boosterTypes: str\n    borderColor: str\n    colorIdentity: str",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TokensBase",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class TokensBase(BaseModel):\n    artist: str\n    artistIds: str\n    asciiName: str\n    availability: str\n    boosterTypes: str\n    borderColor: str\n    colorIdentity: str\n    colors: str\n    edhrecSaltiness: float",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TokensCreate",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class TokensCreate(TokensBase):\n    pass\nclass CardIdentifiersBase(BaseModel):\n    cardKingdomEtchedId: str\n    cardKingdomFoilId: str\n    cardKingdomId: str\n    cardsphereId: str\n    mcmId: str\n    mcmMetaId: str\n    mtgArenaId: str",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CardIdentifiersBase",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class CardIdentifiersBase(BaseModel):\n    cardKingdomEtchedId: str\n    cardKingdomFoilId: str\n    cardKingdomId: str\n    cardsphereId: str\n    mcmId: str\n    mcmMetaId: str\n    mtgArenaId: str\n    mtgjsonFoilVersionId: str\n    mtgjsonNonFoilVersionId: str",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CardIdentifiersCreate",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class CardIdentifiersCreate(CardIdentifiersBase):\n    pass\nclass CardLegalitiesBase(BaseModel):\n    alchemy: str\n    brawl: str\n    commander: str\n    duel: str\n    explorer: str\n    future: str\n    gladiator: str",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CardLegalitiesBase",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class CardLegalitiesBase(BaseModel):\n    alchemy: str\n    brawl: str\n    commander: str\n    duel: str\n    explorer: str\n    future: str\n    gladiator: str\n    historic: str\n    historicbrawl: str",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CardLegalitiesCreate",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class CardLegalitiesCreate(CardLegalitiesBase):\n    pass\nclass CardRulingsBase(BaseModel):\n    date: date\n    text: str\n    uuid: str\nclass CardRulingsCreate(CardRulingsBase):\n    pass\nclass CardForeignDataBase(BaseModel):\n    faceName: str",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CardRulingsBase",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class CardRulingsBase(BaseModel):\n    date: date\n    text: str\n    uuid: str\nclass CardRulingsCreate(CardRulingsBase):\n    pass\nclass CardForeignDataBase(BaseModel):\n    faceName: str\n    flavorText: str\n    language: str",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CardRulingsCreate",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class CardRulingsCreate(CardRulingsBase):\n    pass\nclass CardForeignDataBase(BaseModel):\n    faceName: str\n    flavorText: str\n    language: str\n    multiverseId: int\n    name: str\n    text: str\n    type: str",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CardForeignDataBase",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class CardForeignDataBase(BaseModel):\n    faceName: str\n    flavorText: str\n    language: str\n    multiverseId: int\n    name: str\n    text: str\n    type: str\n    uuid: str\nclass CardForeignDataCreate(CardForeignDataBase):",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CardForeignDataCreate",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class CardForeignDataCreate(CardForeignDataBase):\n    pass\nclass CardPurchaseUrlsBase(BaseModel):\n    cardKingdom: str\n    cardKingdomEtched: str\n    cardKingdomFoil: str\n    cardmarket: str\n    tcgplayer: str\n    tcgplayerEtched: str\n    uuid: str",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CardPurchaseUrlsBase",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class CardPurchaseUrlsBase(BaseModel):\n    cardKingdom: str\n    cardKingdomEtched: str\n    cardKingdomFoil: str\n    cardmarket: str\n    tcgplayer: str\n    tcgplayerEtched: str\n    uuid: str\nclass CardPurchaseUrlsCreate(CardPurchaseUrlsBase):\n    pass",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "CardPurchaseUrlsCreate",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class CardPurchaseUrlsCreate(CardPurchaseUrlsBase):\n    pass\nclass TokenIdentifiersBase(BaseModel):\n    cardKingdomEtchedId: str\n    cardKingdomFoilId: str\n    cardKingdomId: str\n    cardsphereId: str\n    mcmId: str\n    mcmMetaId: str\n    mtgArenaId: str",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TokenIdentifiersBase",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class TokenIdentifiersBase(BaseModel):\n    cardKingdomEtchedId: str\n    cardKingdomFoilId: str\n    cardKingdomId: str\n    cardsphereId: str\n    mcmId: str\n    mcmMetaId: str\n    mtgArenaId: str\n    mtgjsonFoilVersionId: str\n    mtgjsonNonFoilVersionId: str",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TokenIdentifiersCreate",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class TokenIdentifiersCreate(TokenIdentifiersBase):\n    pass\nclass SetTranslationsBase(BaseModel):\n    language: str\n    translation: str\n    uuid: str\nclass SetTranslationsCreate(SetTranslationsBase):\n    pass\nclass SetBoosterContentsBase(BaseModel):\n    boosterIndex: int",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SetTranslationsBase",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class SetTranslationsBase(BaseModel):\n    language: str\n    translation: str\n    uuid: str\nclass SetTranslationsCreate(SetTranslationsBase):\n    pass\nclass SetBoosterContentsBase(BaseModel):\n    boosterIndex: int\n    boosterName: str\n    setCode: str",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SetTranslationsCreate",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class SetTranslationsCreate(SetTranslationsBase):\n    pass\nclass SetBoosterContentsBase(BaseModel):\n    boosterIndex: int\n    boosterName: str\n    setCode: str\n    sheetName: str\n    sheetPicks: int\nclass SetBoosterContentsCreate(SetBoosterContentsBase):\n    pass",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SetBoosterContentsBase",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class SetBoosterContentsBase(BaseModel):\n    boosterIndex: int\n    boosterName: str\n    setCode: str\n    sheetName: str\n    sheetPicks: int\nclass SetBoosterContentsCreate(SetBoosterContentsBase):\n    pass\nclass SetBoosterContentWeightsBase(BaseModel):\n    boosterIndex: int",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SetBoosterContentsCreate",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class SetBoosterContentsCreate(SetBoosterContentsBase):\n    pass\nclass SetBoosterContentWeightsBase(BaseModel):\n    boosterIndex: int\n    boosterName: str\n    boosterWeight: int\n    setCode: str\nclass SetBoosterContentWeightsCreate(SetBoosterContentWeightsBase):\n    pass\nclass SetBoosterSheetsBase(BaseModel):",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SetBoosterContentWeightsBase",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class SetBoosterContentWeightsBase(BaseModel):\n    boosterIndex: int\n    boosterName: str\n    boosterWeight: int\n    setCode: str\nclass SetBoosterContentWeightsCreate(SetBoosterContentWeightsBase):\n    pass\nclass SetBoosterSheetsBase(BaseModel):\n    setCode: str\n    sheetHasBalanceColors: bool",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SetBoosterContentWeightsCreate",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class SetBoosterContentWeightsCreate(SetBoosterContentWeightsBase):\n    pass\nclass SetBoosterSheetsBase(BaseModel):\n    setCode: str\n    sheetHasBalanceColors: bool\n    sheetIsFoil: bool\n    sheetName: str\nclass SetBoosterSheetsCreate(SetBoosterSheetsBase):\n    pass\nclass SetBoosterSheetCardsBase(BaseModel):",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SetBoosterSheetsBase",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class SetBoosterSheetsBase(BaseModel):\n    setCode: str\n    sheetHasBalanceColors: bool\n    sheetIsFoil: bool\n    sheetName: str\nclass SetBoosterSheetsCreate(SetBoosterSheetsBase):\n    pass\nclass SetBoosterSheetCardsBase(BaseModel):\n    cardUuid: str\n    cardWeight: int",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SetBoosterSheetsCreate",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class SetBoosterSheetsCreate(SetBoosterSheetsBase):\n    pass\nclass SetBoosterSheetCardsBase(BaseModel):\n    cardUuid: str\n    cardWeight: int\n    setCode: str\n    sheetName: str\nclass SetBoosterSheetCardsCreate(SetBoosterSheetCardsBase):\n    pass",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SetBoosterSheetCardsBase",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class SetBoosterSheetCardsBase(BaseModel):\n    cardUuid: str\n    cardWeight: int\n    setCode: str\n    sheetName: str\nclass SetBoosterSheetCardsCreate(SetBoosterSheetCardsBase):\n    pass",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SetBoosterSheetCardsCreate",
+        "kind": 6,
+        "importPath": "schemas.mtg_schemas",
+        "description": "schemas.mtg_schemas",
+        "peekOfCode": "class SetBoosterSheetCardsCreate(SetBoosterSheetCardsBase):\n    pass",
+        "detail": "schemas.mtg_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TokenSchema",
+        "kind": 6,
+        "importPath": "schemas.user_schemas",
+        "description": "schemas.user_schemas",
+        "peekOfCode": "class TokenSchema(BaseModel):\n    access_token: str\n    refresh_token: str\nclass TokenPayload(BaseModel):\n    sub: str = None\n    exp: int = None\nclass UserAuth(BaseModel):\n    username: str = Field(..., description=\"username\")\n    password: str = Field(..., min_length=5, max_length=24, description=\"user password\")\nclass UserOut(BaseModel):",
+        "detail": "schemas.user_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "TokenPayload",
+        "kind": 6,
+        "importPath": "schemas.user_schemas",
+        "description": "schemas.user_schemas",
+        "peekOfCode": "class TokenPayload(BaseModel):\n    sub: str = None\n    exp: int = None\nclass UserAuth(BaseModel):\n    username: str = Field(..., description=\"username\")\n    password: str = Field(..., min_length=5, max_length=24, description=\"user password\")\nclass UserOut(BaseModel):\n    id: str\n    username: str\nclass SystemUser(UserOut):",
+        "detail": "schemas.user_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserAuth",
+        "kind": 6,
+        "importPath": "schemas.user_schemas",
+        "description": "schemas.user_schemas",
+        "peekOfCode": "class UserAuth(BaseModel):\n    username: str = Field(..., description=\"username\")\n    password: str = Field(..., min_length=5, max_length=24, description=\"user password\")\nclass UserOut(BaseModel):\n    id: str\n    username: str\nclass SystemUser(UserOut):\n    password: str",
+        "detail": "schemas.user_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "UserOut",
+        "kind": 6,
+        "importPath": "schemas.user_schemas",
+        "description": "schemas.user_schemas",
+        "peekOfCode": "class UserOut(BaseModel):\n    id: str\n    username: str\nclass SystemUser(UserOut):\n    password: str",
+        "detail": "schemas.user_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "SystemUser",
+        "kind": 6,
+        "importPath": "schemas.user_schemas",
+        "description": "schemas.user_schemas",
+        "peekOfCode": "class SystemUser(UserOut):\n    password: str",
+        "detail": "schemas.user_schemas",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "app = FastAPI(\n            docs_url='/api/docs',\n            redoc_url='/api/redoc',\n            openapi_url='/api/openapi.json'\n)\napp.include_router(search.router)\napp.include_router(register.router)\napp.include_router(login.router)\napp.include_router(me.router)\napp.include_router(profile.router)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "origins",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "origins = [\n    \"nginx\"\n    \"http://nginx\",\n    \"http://localhost:8050\",\n    \"localhost:8050\",\n    \"http://localhost:3000\",\n    \"0.0.0.0:3000\"\n]\n# CORS Middleware\napp.add_middleware(",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "POSTGRES_USER",
+        "kind": 5,
+        "importPath": "settings",
+        "description": "settings",
+        "peekOfCode": "POSTGRES_USER = os.environ.get('POSTGRES_USER')\nPOSTGRES_PASSWORD = os.environ.get('POSTGRES_PASSWORD')\nPOSTGRES_DATABASE = os.environ.get('POSTGRES_DB')\nPOSTGRES_HOST = \"database\"\nACCESS_TOKEN_EXPIRE_MINUTES = os.environ.get('ACCESS_TOKEN_EXPIRE_MINUTES')\nREFRESH_TOKEN_EXPIRE_MINUTES = os.environ.get('REFRESH_TOKEN_EXPIRE_MINUTES')\nALGORITHM = os.environ.get('ALGORITHM') \nJWT_SECRET = os.environ.get('JWT_SECRET')\nJWT_REFRESH_SECRET_KEY = os.environ.get('JWT_REFRESH_SECRET_KEY')\nPOSTGRES_URL = f\"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:5432/{POSTGRES_DATABASE}\"",
+        "detail": "settings",
+        "documentation": {}
+    },
+    {
+        "label": "POSTGRES_PASSWORD",
+        "kind": 5,
+        "importPath": "settings",
+        "description": "settings",
+        "peekOfCode": "POSTGRES_PASSWORD = os.environ.get('POSTGRES_PASSWORD')\nPOSTGRES_DATABASE = os.environ.get('POSTGRES_DB')\nPOSTGRES_HOST = \"database\"\nACCESS_TOKEN_EXPIRE_MINUTES = os.environ.get('ACCESS_TOKEN_EXPIRE_MINUTES')\nREFRESH_TOKEN_EXPIRE_MINUTES = os.environ.get('REFRESH_TOKEN_EXPIRE_MINUTES')\nALGORITHM = os.environ.get('ALGORITHM') \nJWT_SECRET = os.environ.get('JWT_SECRET')\nJWT_REFRESH_SECRET_KEY = os.environ.get('JWT_REFRESH_SECRET_KEY')\nPOSTGRES_URL = f\"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:5432/{POSTGRES_DATABASE}\"",
+        "detail": "settings",
+        "documentation": {}
+    },
+    {
+        "label": "POSTGRES_DATABASE",
+        "kind": 5,
+        "importPath": "settings",
+        "description": "settings",
+        "peekOfCode": "POSTGRES_DATABASE = os.environ.get('POSTGRES_DB')\nPOSTGRES_HOST = \"database\"\nACCESS_TOKEN_EXPIRE_MINUTES = os.environ.get('ACCESS_TOKEN_EXPIRE_MINUTES')\nREFRESH_TOKEN_EXPIRE_MINUTES = os.environ.get('REFRESH_TOKEN_EXPIRE_MINUTES')\nALGORITHM = os.environ.get('ALGORITHM') \nJWT_SECRET = os.environ.get('JWT_SECRET')\nJWT_REFRESH_SECRET_KEY = os.environ.get('JWT_REFRESH_SECRET_KEY')\nPOSTGRES_URL = f\"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:5432/{POSTGRES_DATABASE}\"",
+        "detail": "settings",
+        "documentation": {}
+    },
+    {
+        "label": "POSTGRES_HOST",
+        "kind": 5,
+        "importPath": "settings",
+        "description": "settings",
+        "peekOfCode": "POSTGRES_HOST = \"database\"\nACCESS_TOKEN_EXPIRE_MINUTES = os.environ.get('ACCESS_TOKEN_EXPIRE_MINUTES')\nREFRESH_TOKEN_EXPIRE_MINUTES = os.environ.get('REFRESH_TOKEN_EXPIRE_MINUTES')\nALGORITHM = os.environ.get('ALGORITHM') \nJWT_SECRET = os.environ.get('JWT_SECRET')\nJWT_REFRESH_SECRET_KEY = os.environ.get('JWT_REFRESH_SECRET_KEY')\nPOSTGRES_URL = f\"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:5432/{POSTGRES_DATABASE}\"",
+        "detail": "settings",
+        "documentation": {}
+    },
+    {
+        "label": "ACCESS_TOKEN_EXPIRE_MINUTES",
+        "kind": 5,
+        "importPath": "settings",
+        "description": "settings",
+        "peekOfCode": "ACCESS_TOKEN_EXPIRE_MINUTES = os.environ.get('ACCESS_TOKEN_EXPIRE_MINUTES')\nREFRESH_TOKEN_EXPIRE_MINUTES = os.environ.get('REFRESH_TOKEN_EXPIRE_MINUTES')\nALGORITHM = os.environ.get('ALGORITHM') \nJWT_SECRET = os.environ.get('JWT_SECRET')\nJWT_REFRESH_SECRET_KEY = os.environ.get('JWT_REFRESH_SECRET_KEY')\nPOSTGRES_URL = f\"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:5432/{POSTGRES_DATABASE}\"",
+        "detail": "settings",
+        "documentation": {}
+    },
+    {
+        "label": "REFRESH_TOKEN_EXPIRE_MINUTES",
+        "kind": 5,
+        "importPath": "settings",
+        "description": "settings",
+        "peekOfCode": "REFRESH_TOKEN_EXPIRE_MINUTES = os.environ.get('REFRESH_TOKEN_EXPIRE_MINUTES')\nALGORITHM = os.environ.get('ALGORITHM') \nJWT_SECRET = os.environ.get('JWT_SECRET')\nJWT_REFRESH_SECRET_KEY = os.environ.get('JWT_REFRESH_SECRET_KEY')\nPOSTGRES_URL = f\"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:5432/{POSTGRES_DATABASE}\"",
+        "detail": "settings",
+        "documentation": {}
+    },
+    {
+        "label": "ALGORITHM",
+        "kind": 5,
+        "importPath": "settings",
+        "description": "settings",
+        "peekOfCode": "ALGORITHM = os.environ.get('ALGORITHM') \nJWT_SECRET = os.environ.get('JWT_SECRET')\nJWT_REFRESH_SECRET_KEY = os.environ.get('JWT_REFRESH_SECRET_KEY')\nPOSTGRES_URL = f\"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:5432/{POSTGRES_DATABASE}\"",
+        "detail": "settings",
+        "documentation": {}
+    },
+    {
+        "label": "JWT_SECRET",
+        "kind": 5,
+        "importPath": "settings",
+        "description": "settings",
+        "peekOfCode": "JWT_SECRET = os.environ.get('JWT_SECRET')\nJWT_REFRESH_SECRET_KEY = os.environ.get('JWT_REFRESH_SECRET_KEY')\nPOSTGRES_URL = f\"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:5432/{POSTGRES_DATABASE}\"",
+        "detail": "settings",
+        "documentation": {}
+    },
+    {
+        "label": "JWT_REFRESH_SECRET_KEY",
+        "kind": 5,
+        "importPath": "settings",
+        "description": "settings",
+        "peekOfCode": "JWT_REFRESH_SECRET_KEY = os.environ.get('JWT_REFRESH_SECRET_KEY')\nPOSTGRES_URL = f\"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:5432/{POSTGRES_DATABASE}\"",
+        "detail": "settings",
+        "documentation": {}
+    },
+    {
+        "label": "POSTGRES_URL",
+        "kind": 5,
+        "importPath": "settings",
+        "description": "settings",
+        "peekOfCode": "POSTGRES_URL = f\"postgresql://{POSTGRES_USER}:{POSTGRES_PASSWORD}@{POSTGRES_HOST}:5432/{POSTGRES_DATABASE}\"",
+        "detail": "settings",
+        "documentation": {}
+    }
+]

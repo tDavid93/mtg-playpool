@@ -16,7 +16,7 @@ from routes.auth.deps import get_current_user
 router = APIRouter()
 
 @router.get("/api/search")
-async def search_cards(request : Request,search: str, page: int = 0, db: Session = Depends(get_db)):
+async def search_cards(request : Request,search: str, page: int = 0, db: Session = Depends(get_db), user: SystemUser = Depends(get_current_user)):
     page_limit = 30
     cards = db.query(Cards).filter(Cards.language == 'English').filter(Cards.name.ilike(f'%{search}%',)).order_by(Cards.name).offset(page_limit*page).limit(page_limit).all()
     net_card = []

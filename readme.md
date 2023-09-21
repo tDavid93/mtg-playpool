@@ -14,6 +14,7 @@ Backend Setup
 1. Open a terminal and navigate to the backend directory.
 2. Build the backend Docker image by running the following command:
 3. Once the image is built, start the backend service by running the following command:
+   km
 Frontend Setup
 1. Open a terminal and navigate to the frontend directory.
 2. Build the frontend Docker image by running the following command:

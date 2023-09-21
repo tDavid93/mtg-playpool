@@ -1,9 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import axios from 'axios';
+import UseAuth from '../hooks/useAuth';
+import { Link, useNavigate, useLocation } from 'react-router-dom';
 
 const LoginComp = () => {
-    const [username, setUsername] = useState('');
+    const { setAuth } = UseAuth();  
+  const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
+
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+
+        const userRef = useRef();
+    const errRef = useRef();
+
+    const [user, setUser] = useState('');
+    const [pwd, setPwd] = useState('');
+    const [errMsg, setErrMsg] = useState('');
 
     const handleEmailChange = (e) => {
       setUsername(e.target.value);
@@ -31,8 +46,12 @@ const LoginComp = () => {
         console.log('response: ', response);
         const accessToken = response.data.accessToken;
         localStorage.setItem('accessToken', accessToken);
-        window.location.replace("/");
-        // Handle successful login
+        //TODO - get user info from backend
+        const roles = 1;
+        setAuth({ user, pwd, roles, accessToken });
+        setUser('');
+        setPwd('');
+        navigate(from, { replace: true });
       } catch (error) {
         // Handle login error
       }
