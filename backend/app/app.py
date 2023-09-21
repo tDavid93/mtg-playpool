@@ -1,23 +1,35 @@
-from fastapi import FastAPI, Request
-from fastapi.params import Depends
+from fastapi import FastAPI, Depends, HTTPException, status
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.encoders import jsonable_encoder
+
 
 from mtgjson_db.database import engine, sessionLocal
 from mtgjson_db.mtg_models import *
-from sqlalchemy.orm import Session
-
+from routes import search
+from routes.auth import register
+from routes.auth import login
+from routes.auth import me
+from routes import profile
 
 Base.metadata.create_all(bind=engine)
 
-app = FastAPI()
+app = FastAPI(
+            docs_url='/api/docs',
+            redoc_url='/api/redoc',
+            openapi_url='/api/openapi.json'
+)
+
+app.include_router(search.router)
+app.include_router(register.router)
+app.include_router(login.router)
+app.include_router(me.router)
+app.include_router(profile.router)
 
 # Cross Origin Resource Sharing (CORS) adresses
 origins = [
     "nginx"
     "http://nginx",
-    "http://localhost:8080",
-    "localhost:8080",
+    "http://localhost:8050",
+    "localhost:8050",
     "http://localhost:3000",
     "0.0.0.0:3000"
     
@@ -31,63 +43,3 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"]
 )
-
-# Dependency
-def get_db():
-    db = sessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
-
-
-
-@app.get("/api/search")
-async def search_cards(search:str, page:int = 0, db:Session = Depends(get_db)):
-    page_limit = 30
-    cards = db.query(Cards).filter(Cards.language == 'English').filter(Cards.name.ilike(f'%{search}%',)).order_by(Cards.name).offset(page_limit*page).limit(page_limit).all()
-    net_card = []
-    for card in cards:
-        net_card.append( build_network_card(card, db))
- 
-    return jsonable_encoder(net_card)
-
-@app.get("/api/cardslist")
-async def get_cards_list(page:int = 0, db:Session = Depends(get_db)):
-    page_limit = 50
-    cards = db.query(Cards).filter(Cards.language == 'English').order_by(Cards.name).offset(page_limit*page).limit(page_limit).all()  
-    net_card = []
-    for card in cards:
-        net_card.append(build_network_card(card,db))
-    
-    return jsonable_encoder(net_card)
- 
-def build_network_card(card:Cards, db):
-    n_card = {
-        'name' : card.name,
-        'uuid' : card.uuid,
-        'img_url': get_image_url(card,db)
-    }
-    return n_card
- 
- 
-def get_image_url(card:Cards, db:Session = Depends(get_db)):
-    """returns the url of the image for the card"""
-    try:
-        cardid = db.query(CardIdentifiers).filter(CardIdentifiers.uuid == card.uuid).first()
-    
-    except Exception as e:
-        print (e)
-        return "https://cards.scryfall.io/art_crop/front/b/d/bd8fa327-dd41-4737-8f19-2cf5eb1f7cdd.jpg"        
-    scryfallid = cardid.scryfallid
-    fileType = "normal"
-    #fileType = "art_crop"
-    fileFace = "front"
-    
-    dir1 = scryfallid[0:1]
-    dir2 = scryfallid[1:2]
-    fileName = scryfallid
-    fileFormat = "jpg"
-
-    img_url = f"https://cards.scryfall.io/{fileType}/{fileFace}/{dir1}/{dir2}/{fileName}.{fileFormat}";
-    return img_url
