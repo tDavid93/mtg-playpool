@@ -1,17 +1,17 @@
-import Card_Grid from "../components/Card_Grid";
+import DeckCard_Grid from "../components/DeckCard_Grid";
 import ActiveDeckProvider from "../context/ActiveDeckProvider";
 
-const AllCards = () => {
+const DeckCards = () => {
 
     return(
         <>
         <ActiveDeckProvider>
         <section>
-        <Card_Grid />
+        <DeckCard_Grid />
         </section>)
         </ActiveDeckProvider>
         </>
         )
     };
 
-export default AllCards;
+export default DeckCards;

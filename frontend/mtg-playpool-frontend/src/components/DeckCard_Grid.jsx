@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import { SimpleGrid, GridItem, Divider, Flex, Container, Box } from "@chakra-ui/react";
+import React, { useState, useEffect, useContext } from "react";
+import { SimpleGrid, GridItem, Divider, Flex, Container, Box, Button } from "@chakra-ui/react";
 import Mtg_Card from "./Mtg_Card";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Search_Menu from "./Search_Menu";
@@ -7,8 +7,11 @@ import "../styles.css"
 import useAxiosPrivate from "../hooks/useAxiosPrivate";
 import { useNavigate, useLocation } from "react-router-dom";
 import DeckSelector from "./Deck_Selector";
+import ActiveDeckContext from "../context/ActiveDeckContext";
 
-function Card_Grid() {
+
+
+function DeckCard_Grid() {
    
   const [cards, setCards] = useState([]);
   const [loading, setLoading] = useState(false);
@@ -19,6 +22,7 @@ function Card_Grid() {
   const axiosPrivate = useAxiosPrivate();
   const navigate = useNavigate();
   const location = useLocation();
+  const [currentDeck, setCurrentDeck] = useContext(ActiveDeckContext);
 
   const fetchData = async () => {
     if (loading || !hasMore) return;
@@ -26,10 +30,10 @@ function Card_Grid() {
     setLoading(true);
     setError(false);
 
-    let url = `/search` ;
+    let url = `/deck/get_deck_cards` ;
     
     try {
-      let response = await axiosPrivate.get( url, {params:{page: page, search: searchQuery}});
+      let response = await axiosPrivate.get( url, {params:{deck_id: currentDeck, page: page, search: searchQuery}});
       const data = await response.data;
       console.log(data);
         
@@ -51,7 +55,7 @@ function Card_Grid() {
 
   useEffect(() => {
     fetchData();
-  }, [searchQuery]);
+  }, [searchQuery, currentDeck]);
 
   const handleSearch = query => {
     setSearchQuery(query);
@@ -60,14 +64,19 @@ function Card_Grid() {
     setHasMore(true);
   };
 
+  const handleDeckSelect = deck => {
+    setCurrentDeck(deck);
+    console.log(currentDeck);
+  };
 
   return (
     <>
+      <Button onClick={fetchData}>Fetch Data</Button>
       <Box className="search-box" backdropBlur="md" position="center" top="0" zIndex="sticky" left="50%" >
       <Search_Menu onSearch={handleSearch} />
       <Divider height="1" />
       </Box>
-      <DeckSelector />
+      <DeckSelector onDeckSelect={handleDeckSelect}/>
       <InfiniteScroll
         dataLength={cards.length}
         next={fetchData}
@@ -79,7 +88,7 @@ function Card_Grid() {
         <SimpleGrid className="custom-card-grid" templateColumns="repeat(5, 1fr)" gap={6} overflow="inherit">
           {cards.map((card) => (
             <GridItem key={card.id} overflow="auto">
-              <Mtg_Card card={card}/>
+              <Mtg_Card card={card} currentDeck={currentDeck}/>
             </GridItem>
           ))}
         </SimpleGrid>
@@ -89,4 +98,4 @@ function Card_Grid() {
   );
 }
 
-export default Card_Grid;
+export default DeckCard_Grid;

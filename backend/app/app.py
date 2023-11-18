@@ -9,6 +9,7 @@ from routes.auth import register
 from routes.auth import login
 from routes.auth import me
 from routes import profile
+from routes.deck_builder import deck_builder
 
 Base.metadata.create_all(bind=engine)
 
@@ -23,6 +24,7 @@ app.include_router(register.router)
 app.include_router(login.router)
 app.include_router(me.router)
 app.include_router(profile.router)
+app.include_router(deck_builder.router)
 
 # Cross Origin Resource Sharing (CORS) adresses
 origins = [

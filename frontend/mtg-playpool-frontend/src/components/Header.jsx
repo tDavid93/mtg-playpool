@@ -13,6 +13,7 @@ const Header = () => {
       wrap="wrap"
       padding="0.5rem"
       className="custom-header"
+      position={"sticky"}
     >
       <Flex align="center" mr={5}>
        <HStack>
@@ -26,6 +27,12 @@ const Header = () => {
           </Box>
           <Box>
           <Link to="/login">Login</Link>
+          </Box>
+          <Box>
+          <Link to="/signup">Signup</Link>
+          </Box>
+          <Box>
+          <Link to="/deckcards">Decks</Link>
           </Box>
 
           <Divider orientation="vertical" />
