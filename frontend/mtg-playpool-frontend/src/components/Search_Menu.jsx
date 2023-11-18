@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { Input, Button, Flex } from "@chakra-ui/react";
 
+
+
 function Search_Menu({ onSearch }) {
   const [searchInput, setSearchInput] = useState("");
 

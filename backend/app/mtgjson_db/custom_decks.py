@@ -7,17 +7,11 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import relationship
 from sqlalchemy import ForeignKey
 
+from mtgjson_db.mtg_models import Cards
+from mtgjson_db.users import User
+
 import passlib.hash as _hash
 
-class DeckCards(Base):
-    __tablename__ = 'deck_cards'
-    
-    deck_id = Column(Integer, ForeignKey('decks.id'), primary_key=True)
-    card_id = Column(Integer, ForeignKey('cards.id'), primary_key=True)
-    quantity = Column(Integer)
-    
-    deck = relationship("Decks", back_populates="deck_cards")
-    card = relationship("Cards", back_populates="deck_cards")
 
 class Decks(Base):
     __tablename__ = 'decks'
@@ -28,6 +22,17 @@ class Decks(Base):
     description = Column(String(255))
     format = Column(String(255))
     
-    user_id = Column(Integer, ForeignKey('user.id'))
+    user_id = Column(Integer, ForeignKey(User.id), nullable=False)
     
-    user = relationship("User", back_populates="decks")
+    user = relationship("User")
+
+class DeckCards(Base):
+    __tablename__ = 'deck_cards'
+    
+    deck_id = Column(Integer, ForeignKey(Decks.id), primary_key=True)
+    card_id = Column(String(36), ForeignKey(Cards.uuid), nullable=False)
+    quantity = Column(Integer)
+ 
+       
+    deck = relationship("Decks")
+    card = relationship("Cards")

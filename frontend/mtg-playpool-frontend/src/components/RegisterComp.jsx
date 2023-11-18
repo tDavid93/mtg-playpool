@@ -34,7 +34,7 @@ const RegisterComp = () => {
       console.log('password: ', password);
       try {
         const response = await axios.post(
-            '/api/login',
+            '/api/signup',
                     {
                     username: username,
                     password: password
@@ -43,14 +43,9 @@ const RegisterComp = () => {
                     headers: {
                         'Content-Type': 'application/x-www-form-urlencoded'
                       }});
-        console.log('response: ', response.data.access_token);
-        const accessToken = response.data.access_token;
-        //TODO - get user info from backend
-        const roles = 1;
-        setAuth({ user, pwd, roles, accessToken });
-        setUser('');
-        setPwd('');
-        navigate(from, { replace: true });
+        console.log('response: ', response.data);
+        
+        navigate('/login', { replace: true });
       } catch (error) {
         // Handle login error
       }
@@ -58,7 +53,7 @@ const RegisterComp = () => {
 
     return (
       <div>
-        <h2>Login</h2>
+        <h2>Signup</h2>
         <form onSubmit={handleSubmit}>
           <label>username</label>
           <input type="text" value={username} onChange={handleEmailChange} />
@@ -66,7 +61,7 @@ const RegisterComp = () => {
           <label>Password:</label>
           <input type="password" value={password} onChange={handlePasswordChange} />
           <br />
-          <button type="submit">Login</button>
+          <button type="submit">Register</button>
         </form>
       </div>
     );
