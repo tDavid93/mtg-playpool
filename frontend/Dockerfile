@@ -9,4 +9,4 @@ COPY mtg-playpool-frontend/package.json .
 COPY mtg-playpool-frontend/package-lock.json .
 RUN npm install
 
-ENTRYPOINT npm start
+ENTRYPOINT npm start dev

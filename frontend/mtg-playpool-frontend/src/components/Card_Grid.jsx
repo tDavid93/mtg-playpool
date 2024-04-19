@@ -27,10 +27,10 @@ function Card_Grid() {
     setLoading(true);
     setError(false);
 
-    let url = `/search` ;
+    let url = `/transformer_search` ;
     
     try {
-      let response = await axiosPrivate.get( url, {params:{page: page, search: searchQuery}});
+      let response = await axiosPrivate.get( url, {params:{page: page, query: searchQuery}});
       const data = await response.data;
       console.log(data);
         

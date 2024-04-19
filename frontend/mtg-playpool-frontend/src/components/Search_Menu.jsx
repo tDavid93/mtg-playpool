@@ -5,7 +5,7 @@ function Search_Menu({ onSearch }) {
   const [searchInput, setSearchInput] = useState("");
 
   const handleSearch = () => {
-    onSearch(searchInput);
+    onSearch(searchInput); // This will use the latest state value
   };
 
   return (
@@ -14,9 +14,8 @@ function Search_Menu({ onSearch }) {
         type="text"
         placeholder="Search for cards..."
         value={searchInput}
-        onChange={(e) => setSearchInput(e.target.value)}
+        onChange={(e) => setSearchInput(e.target.value)} // Update state here
         mr={2}
-        onInput={handleSearch}
       />
       <Button colorScheme="blue" onClick={handleSearch}>
         Search

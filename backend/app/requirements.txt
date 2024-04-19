@@ -4,3 +4,9 @@ SQLAlchemy==1.4.39
 python-jose[cryptography]
 passlib[bcrypt]
 python-multipart
+pandas
+faiss-cpu
+numpy
+sentence-transformers
+FlagEmbedding
+requests

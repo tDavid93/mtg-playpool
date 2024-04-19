@@ -555,3 +555,6 @@ yarn-error.log*
 .yarn/unplugged
 # yarn v2
 pyvenv.cfg
+backend/app/all_my_cards.csv
+backend/app/AtomicCards.json
+backend/app/embeddings/mixedbread-ai/mxbai-embed-large-v1.npy
