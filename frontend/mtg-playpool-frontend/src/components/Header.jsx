@@ -1,11 +1,16 @@
 import React from "react";
-import { Heading, Flex, Box, Link, useStyleConfig } from "@chakra-ui/react";
-import { Link as RouterLink } from "react-router-dom";
+import { Flex, Heading, Box, Link, useStyleConfig, Image} from "@chakra-ui/react";
+import { Link as RouterLink, useLocation } from "react-router-dom";
 
 const Header = () => {
-  // This hook can be used if you have set up custom styles in your theme.js
-  // Otherwise, you can use the style props directly in the components
-  const styles = useStyleConfig("CustomHeader");
+  const location = useLocation();
+
+  // A function to determine if the link is active
+  const isActive = (path) => location.pathname === path;
+
+
+  const headingStyles = useStyleConfig("Heading");
+
 
   return (
     <Flex
@@ -13,29 +18,43 @@ const Header = () => {
       align="center"
       justify="space-between"
       wrap="wrap"
-      p={4}
+      p="1rem"
       bg="deepBlue"
       color="manaWhite"
-      sx={styles} // if you're using a custom style config
     >
+       <Link as={RouterLink} to="/">
       <Flex align="center" mr={5}>
-        <Heading as="h1" size="lg" letterSpacing={"tighter"}>
-          MTGPlaypool
+     
+        <Box p={2}>
+          
+          <Image src="assets/logo.svg" alt="MTGPlaypool" boxSize='50px'/>
+          
+        </Box>
+        <Heading as="h1" size="lg" fontWeight="bold"  sx={headingStyles}>
+        MTGPlaypool
         </Heading>
       </Flex>
+      </Link>
 
-      <Box>
-        <Link as={RouterLink} to="/" px={2} py={1} rounded={'md'}>
+      <Box display={{ base: 'none', md: 'flex' }} mt={{ base: 4, md: 0 }}>
+        <Link as={RouterLink} to="/" px={4} py={2} rounded={'md'}
+              fontWeight={isActive('/') ? 'bold' : 'normal'}
+              _hover={{ bg: 'manaBlue', color: 'manaWhite' }}>
           Home
         </Link>
-        <Link as={RouterLink} to="/allcards" px={2} py={1} rounded={'md'}>
+        <Link as={RouterLink} to="/allcards" px={4} py={2} rounded={'md'}
+              fontWeight={isActive('/allcards') ? 'bold' : 'normal'}
+              _hover={{ bg: 'manaBlue', color: 'manaWhite' }}>
           Cards
         </Link>
-        <Link as={RouterLink} to="/login" px={2} py={1} rounded={'md'}>
+        <Link as={RouterLink} to="/login" px={4} py={2} rounded={'md'}
+              fontWeight={isActive('/login') ? 'bold' : 'normal'}
+              _hover={{ bg: 'manaBlue', color: 'manaWhite' }}>
           Login
         </Link>
       </Box>
 
+      {/* This divider might be the bottom border for the active link indicator */}
       <Box flexGrow={1} height="2px" bg="gold" my={2} />
     </Flex>
   );

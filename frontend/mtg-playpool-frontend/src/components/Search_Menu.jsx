@@ -15,6 +15,7 @@ function Search_Menu({ onSearch }) {
         placeholder="Search for cards..."
         value={searchInput}
         onChange={(e) => setSearchInput(e.target.value)} // Update state here
+        onKeyPress={(e) => e.key === "Enter" && handleSearch()} // Handle search on Enter key
         mr={2}
       />
       <Button colorScheme="blue" onClick={handleSearch}>

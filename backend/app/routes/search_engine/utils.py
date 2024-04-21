@@ -44,7 +44,7 @@ LEFT JOIN cardIdentifiers ci ON c.uuid = ci.uuid;"""
 def create_card_text_representation(card):
     representation = ""
     #representation += f"Name: card['card_name'],"
-        
+    print(card.keys())
     representation += f"Text: {card['card_text']},"
     representation += f"Type: {card['card_type']},"
     representation += f"Types: {card['card_types']},"
@@ -62,30 +62,92 @@ def create_card_text_representation(card):
 
 
 def create_atomic_card_text_representation(card, rulings_dict):
+    template = """
+    This {type} card, {card_name}, has types {types}.
+    {power_toughness}
+    Its colors are {colors}.
+    Its color identity is {color_identity}.
+    The mana cost is {mana_cost}.
+    {card_text}    
+    """
+
+    power_toughness = ""
+    if card['power'] and card['toughness']:
+        power_toughness = f"It has an attack power of {card['power']} and a defense of {card['toughness']}."
+
+    colors = ", ".join(card['colors']) if card['colors'] else "no colors"
+    color_identity = ", ".join(card['colorIdentity']) if card['colorIdentity'] else "no color identity"
     
-    
-    representation = ""
-    #representation += f"Name: card['card_name'],"
-    
-    representation += f"Text: {card['text']},"
-    representation += f"Type: {card['type']},"
-    representation += f"Types: {card['types']},"
-    #if card['card_power'] is not None and card['card_toughness'] is not None:
-    representation += f"Power/Toughness: {card['power']}/{card['toughness']},"
-    #if card['card_colors'] is not None:
-    representation += f"Colors: {card['colors']},"
-    #if card['card_colorIdentity'] is not None:
-    representation += f"Color Identity: {card['colorIdentity']},"
-    representation += f"Mana Cost: {card['manaCost']},"
-    
-    #find all ruling for the atomic card in cards dataframe
-    
+
     rulings = rulings_dict.get(card['scryfalloracleid'], [])
-    representation += f"Rulings: {rulings},"
+    rulings_text = f"Key rulings include: {', '.join(rulings)}." if rulings else ""
     
     
+    representation = template.format(
         
+        type=card['type'],
+        card_name=card['name'],
+        types=", ".join(card['types']),
+        power_toughness=power_toughness,
+        colors=colors,
+        color_identity=color_identity,
+        mana_cost=card['manaCost'],
+        card_text=card['text']
+        
+    )
+
     return representation
+
+def normalize_mana_cost(mana_cost):
+    """
+    Normalize a mana cost string from MTGJson database to a more readable format.
+
+    :param mana_cost: Mana cost string from MTGJson database (e.g. "{2}{U}{R}")
+    :return: Normalized mana cost string (e.g. "2 Blue, 1 Red")
+    """
+    mana_symbols = {
+        "{W}": "White",
+        "{U}": "Blue",
+        "{B}": "Black",
+        "{R}": "Red",
+        "{G}": "Green",
+        "{C}": "Colorless",
+        "{X}": "Variable Colorless",
+        "{Y}": "2 Life",  # Not a standard mana symbol, but sometimes used
+        "{Z}": "3 Life",  # Not a standard mana symbol, but sometimes used
+        "{T}": "Tap",  # Not a standard mana symbol, but sometimes used
+        "{Q}": "Untap",  # Not a standard mana symbol, but sometimes used
+        "{E}": "Energy",  # From the Kaladesh block
+        "{L}": "Life",  # From the Zendikar block
+        "{P}": "Phyrexian",  # From the Scars of Mirrodin block
+        "{S}": "Snow",  # From the Ice Age block
+    }
+
+    # Remove curly braces and split the mana cost into individual symbols
+    mana_cost_symbols = mana_cost.replace("{", "").replace("}", "").split()
+
+    # Initialize the normalized mana cost string
+    normalized_mana_cost = ""
+
+    # Iterate over the mana cost symbols
+    for symbol in mana_cost_symbols:
+        # Check if the symbol is a number (e.g. "2")
+        if symbol.isdigit():
+            # Add the number to the normalized mana cost string
+            normalized_mana_cost += symbol + " "
+        else:
+            # Check if the symbol is a known mana symbol
+            if symbol in mana_symbols:
+                # Add the corresponding mana symbol name to the normalized mana cost string
+                normalized_mana_cost += mana_symbols[symbol] + " "
+            else:
+                # If the symbol is unknown, add it to the normalized mana cost string as-is
+                normalized_mana_cost += symbol + " "
+
+    # Remove trailing spaces and add commas between mana symbols
+    normalized_mana_cost = ", ".join(normalized_mana_cost.split())
+
+    return normalized_mana_cost
 
 def extract_scryId(card):
     ids = dict(card['identifiers'])
@@ -116,7 +178,7 @@ def get_card_list_from_deck_list_name(atomic_df, deck: list) -> list:
 
 def prepare_atomic_df(db_connection):
     cards = load_data(db_connection)
-    cards['text_repr'] = cards.apply(lambda x: create_card_text_representation(x), axis=1)
+    #cards['text_repr'] = cards.apply(lambda x: create_card_text_representation(x), axis=1)
 
     """ atomic_url = "https://mtgjson.com/api/v5/AtomicCards.json"
     

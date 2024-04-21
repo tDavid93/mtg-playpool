@@ -1,89 +1,54 @@
-import React, { useState, useEffect } from "react";
-import { SimpleGrid, GridItem, Divider, Flex, Container, Box } from "@chakra-ui/react";
+import React, { useState, useEffect, useCallback } from "react";
+import { SimpleGrid, Box, useColorModeValue, Center, Spinner, Text, Switch, FormLabel } from "@chakra-ui/react";
 import Mtg_Card from "./Mtg_Card";
 import InfiniteScroll from 'react-infinite-scroll-component';
 import Search_Menu from "./Search_Menu";
-import "../styles.css"
-import useAxiosPrivate from "../hooks/useAxiosPrivate";
-import { useNavigate, useLocation } from "react-router-dom";
-
+import useFetchCards from "../hooks/useFetchCards"; // Custom hook for fetching data
 
 function Card_Grid() {
-   
-  const [cards, setCards] = useState([]);
-  const [loading, setLoading] = useState(false);
-  const [page, setPage] = useState(0);
-  const [error, setError] = useState(false);
-  const [hasMore, setHasMore] = useState(true);
   const [searchQuery, setSearchQuery] = useState("");
-  const axiosPrivate = useAxiosPrivate();
-  const navigate = useNavigate();
-  const location = useLocation();
-
-
-  const fetchData = async () => {
-    if (loading || !hasMore) return;
-
-    setLoading(true);
-    setError(false);
-
-    let url = `/transformer_search` ;
-    
-    try {
-      let response = await axiosPrivate.get( url, {params:{page: page, query: searchQuery}});
-      const data = await response.data;
-      console.log(data);
-        
-        setCards(prevItems => [...prevItems, ...data]);
-        setPage(prevPage => prevPage + 1);
-
-      if (data.length === 0) {
-        setHasMore(false);
-      }
-    } catch (e) {
-      console.log(e);
-      setError(e);
-      
-      navigate('/login', { state: { from: location }, replace: true });
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, [searchQuery]);
+  const [isAltEndpoint, setIsAltEndpoint] = useState(false);
+  const { cards, hasMore, loading, error, fetchNextPage } = useFetchCards(searchQuery, isAltEndpoint);
 
   const handleSearch = query => {
     setSearchQuery(query);
-    setPage(0);
-    setCards([]);
-    setHasMore(true);
   };
+
+  const toggleEndpoint = () => {
+    setIsAltEndpoint(prev => !prev);
+    setSearchQuery(""); // Optionally reset search query on endpoint toggle
+  };
+
+  const gridBgColor = useColorModeValue('lightParchment', 'stoneGray');
+  const gridItemBgColor = useColorModeValue('manaWhite', 'manaBlack');
+  const loaderColor = useColorModeValue('manaBlue', 'manaGreen');
+  const endMessageColor = useColorModeValue('manaGreen', 'gold');
 
   return (
     <>
-      <Box className="search-box" backdropBlur="md" position="center" top="0" zIndex="sticky" left="50%" >
-      <Search_Menu onSearch={handleSearch} />
-      <Divider height="1" />
+      <Box className="search-box">
+        <FormLabel htmlFor="endpoint-toggle">Use Alternative Endpoint</FormLabel>
+        <Switch id="endpoint-toggle" isChecked={isAltEndpoint} onChange={toggleEndpoint} />
+        <Search_Menu onSearch={handleSearch} />
       </Box>
       <InfiniteScroll
         dataLength={cards.length}
-        next={fetchData}
+        next={fetchNextPage}
         hasMore={hasMore && !loading}
-        loader={<h4>Loading...</h4>}
-        endMessage={<p>End of cards</p>}
+        loader={<Center my={8}><Spinner size="xl" color={loaderColor} /></Center>}
+        endMessage={
+          <Center py={8}>
+            <Text color={endMessageColor} fontSize="lg">
+              You've reached the end of the cards
+            </Text>
+          </Center>
+        }
       >
-        
-        <SimpleGrid className="custom-card-grid" templateColumns="repeat(5, 1fr)" gap={6} overflow="inherit">
-          {cards.map((card) => (
-            <GridItem key={card.id} overflow="auto">
-              <Mtg_Card card={card} />
-            </GridItem>
-          ))}
+        <SimpleGrid columns={[2, null, 3, 5]} spacing={6} p={6}>
+          {cards.map(card => <Mtg_Card key={card.id} card={card} />)}
         </SimpleGrid>
-       
       </InfiniteScroll>
+      {error && <Center color="red.500">Failed to load data, please try again.</Center>}
     </>
   );
 }

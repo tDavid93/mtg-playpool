@@ -1,4 +1,5 @@
 import faiss
+import idlelib
 import numpy as np
 from sentence_transformers import SentenceTransformer
 
@@ -28,7 +29,7 @@ class SentenceSearch:
         self.embeddings = None
         self.collection = pd.read_csv('all_my_cards.csv')
         self.collection['scryfalloracleid'] = self.collection.apply(lambda x: ', '.join(item_desc[item_desc['name'] == x['Card Name']]['scryfalloracleid'].unique()), axis=1)
-        
+        self.filter_ids = set(self.collection['scryfalloracleid'].values)
 
     def load_and_unload_model(self, model_name , rebuild_embeddings=False):
         """
@@ -118,53 +119,87 @@ class SentenceSearch:
         
         print(f"Enhanced query: {enhanced_query}")
         return enhanced_query
+    
+    def preprocess_query(self, query):
+    # Example preprocessing to better align with card data
+        return f"Find card that match: {query}"
 
-    def search(self, query_text, top_k=30, use_reranker=False, filtered_by_collection=True):
+    def search(self, query_text, top_k=30, use_reranker=True, filtered_by_collection=True):
         """
         Search the FAISS HNSW index for the top_k closest vectors to the query text.
         """
         print("Searching")
-        #enhanced_query = self.enhance_query_with_entities(query_text)
-        
-        if self.model_name == 'mixedbread-ai/mxbai-embed-large-v1':
-            query_text = f'Represent this sentence for searching relevant passages: {query_text}'
-        
-        
-        query_embedding = self.model.encode(query_text, convert_to_numpy=True)
-        l2_norm = np.linalg.norm(query_embedding)
-        query_embedding = query_embedding / l2_norm
-
-        # Correctly access the hnsw index from IndexIDMap
-        if isinstance(self.index, faiss.IndexIDMap):
-            hnsw_index = faiss.downcast_index(self.index.index)  # Access the underlying HNSW index
-            hnsw_index.hnsw.efSearch = 100  # Example value, adjust based on desired search precision
-        else:
-            print("Index is not of type IndexIDMap with an HNSW index.")
-            return None
-
-        _, retrieved_ids = self.index.search(np.expand_dims(query_embedding, axis=0), k=top_k)
-        
-            # The rest of the search method remains unchanged
-        
-        if len(retrieved_ids) == 0:
-            return None
-        
-        matches = self.item_desc.iloc[retrieved_ids[0]]
-
-        # Conditional reranking
-        if use_reranker and self.reranker is not None:
-            retrieved_text = self.captions.iloc[retrieved_ids[0]]
-            scores = self.reranker.compute_score([(query_text, rt) for rt in retrieved_text])
-            matches['scores'] = scores
-            matches = matches.sort_values(by='scores', ascending=False).reset_index(drop=True)
-            print("Reranked matches: ", matches)
+        try:
+            query_text = self.preprocess_query(query_text)
             
-         
-        
-        if filtered_by_collection:
-            matches = matches[matches['scryfalloracleid'].isin(self.collection['scryfalloracleid'].values)]
-        
-        return matches
+            if self.model_name == 'mixedbread-ai/mxbai-embed-large-v1':
+                query_text = f'Represent this sentence for searching relevant passages: {query_text}'
+            
+            query_embedding = self.model.encode(query_text, convert_to_numpy=True)
+            l2_norm = np.linalg.norm(query_embedding)
+            query_embedding /= l2_norm
+
+            matches = None
+            max_iterations = 10
+            iteration = 0
+            found_enough_matches = False
+
+            while iteration < max_iterations and not found_enough_matches:
+                if isinstance(self.index, faiss.IndexIDMap):
+                    hnsw_index = faiss.downcast_index(self.index.index)
+                    hnsw_index.hnsw.efSearch = 100  # Adjust this value based on desired search precision
+                    distances, retrieved_ids = self.index.search(np.expand_dims(query_embedding, axis=0), top_k)
+                else:
+                    print("Index is not of type IndexIDMap with an HNSW index.")
+                    return None
+
+                if len(retrieved_ids[0]) == 0:
+                    print("No matches found in this iteration.")
+                    iteration += 1
+                    top_k *= 2  # Increase the search scope
+                    continue
+
+                current_matches = self.item_desc.iloc[retrieved_ids[0]].reset_index(drop=True)
+
+                if filtered_by_collection:
+                    # Ensure that current_matches filtering by 'scryfalloracleid' does not use a list directly if it's unhashable
+                    
+                    
+                    current_matches = current_matches[current_matches['scryfalloracleid'].isin(self.filter_ids)]
+                    print(f"Iteration {iteration + 1}: Found {len(current_matches)} matches in collection.")
+
+                print(f"Iteration {iteration + 1}: Found {len(current_matches)} matches.")
+                if matches is None:
+                    matches = current_matches
+                else:
+                    print(f"Current matches: {current_matches.shape}, Total matches: {matches.shape}.")
+                    matches = pd.concat([matches, current_matches], ignore_index=True)
+                    matches = matches.drop_duplicates(subset=['scryfalloracleid'])
+
+                if len(matches) >= top_k:
+                    found_enough_matches = True
+                    matches = matches.head(top_k)
+                    print("Found enough matches.")
+                else:
+                    iteration += 1
+                    top_k *= 2  # Increase the search scope
+
+                if top_k > 1000:
+                    print("Reached upper limit for search breadth.")
+                    break
+
+            if use_reranker and self.reranker is not None:
+                retrieved_text = self.captions.iloc[retrieved_ids[0]]
+                scores = self.reranker.compute_score([(query_text, rt) for rt in retrieved_text])
+                matches['scores'] = scores
+                matches = matches.sort_values(by='scores', ascending=False).reset_index(drop=True)
+                print("Reranked matches: ", matches)
+
+            return matches
+
+        except Exception as e:
+            print(f"An error occurred during search: {e}")
+            return None
 
 
     def gradio_search(self, query, use_reranker,filtered_by_collection, top_k=30):

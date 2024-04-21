@@ -41,9 +41,9 @@ router = APIRouter()
 
 
 @router.get("/api/search")
-async def search_cards(request : Request,search: str, page: int = 0, db: Session = Depends(get_db), user: SystemUser = Depends(get_current_user)):
+async def search_cards(request : Request,query: str, page: int = 0, db: Session = Depends(get_db)):
     page_limit = 30
-    cards = db.query(Cards).filter(Cards.language == 'English').filter(Cards.name.ilike(f'%{search}%',)).order_by(Cards.name).offset(page_limit*page).limit(page_limit).all()
+    cards = db.query(Cards).filter(Cards.language == 'English').filter(Cards.name.ilike(f'%{query}%',)).order_by(Cards.name).offset(page_limit*page).limit(page_limit).all()
     net_card = []
     for card in cards:
         net_card.append(build_network_card(card, db))
@@ -94,7 +94,7 @@ def get_image_url(card:Cards, db:Session = Depends(sessionLocal)):
 
     
 @router.get("/api/transformer_search")
-async def transformer_search(query: str = 'magic',filltered_by_collection : bool = True, top_k: int = 1000, page: int = 0, page_size: int = 30, use_reranker: bool = False, db: Session = Depends(get_db)):
+async def transformer_search(request : Request,query: str = 'magic',filltered_by_collection : bool = True, top_k: int = 1000, page: int = 0, page_size: int = 30, use_reranker: bool = False, db: Session = Depends(get_db)):
     
     print(f"Query: {query}, top_k: {top_k}, page: {page}, page_size: {page_size}, use_reranker: {use_reranker}")
     
