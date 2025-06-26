@@ -6,11 +6,11 @@ class DeckCards(Base):
     __tablename__ = 'deck_cards'
 
     deck_id = Column(Integer, ForeignKey('decks.id'), primary_key=True)
-    card_id = Column(Integer, ForeignKey('cards.id'), primary_key=True)
+    card_id = Column(String, ForeignKey('cards.uuid'), primary_key=True)
     quantity = Column(Integer)
 
     deck = relationship('Decks', back_populates='deck_cards')
-    card = relationship('Cards', back_populates='deck_cards')
+    card = relationship('Cards')
 
 class Decks(Base):
     __tablename__ = 'decks'

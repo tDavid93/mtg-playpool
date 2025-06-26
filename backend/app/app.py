@@ -4,6 +4,8 @@ from fastapi.middleware.cors import CORSMiddleware
 
 from mtgjson_db.database import engine, sessionLocal
 from mtgjson_db.mtg_models import *
+from mtgjson_db.custom_decks import Decks, DeckCards  
+from mtgjson_db.users import User
 from routes import search
 from routes.auth import register
 from routes.auth import login
@@ -11,7 +13,7 @@ from routes.auth import me
 from routes import profile
 
 Base.metadata.create_all(bind=engine)
-
+##
 app = FastAPI(
             docs_url='/api/docs',
             redoc_url='/api/redoc',
