@@ -27,7 +27,7 @@ from fastapi import FastAPI, Depends, HTTPException
 # preload the cards from the databese for the search engine
 
 
-embedder = 'mixedbread-ai/mxbai-embed-large-v1'
+embedder = './mtg-commander-embeddings-v2'
 reranker = 'cross-encoder/ms-marco-TinyBERT-L-2'
 
 atomic_df = prepare_atomic_df(engine)
@@ -105,8 +105,8 @@ async def transformer_search(request : Request,query: str = 'magic',filltered_by
         #return 30 random cards
         query = 'magic'
     try:
-        results, query_ttime = search_engine.gradio_search(query, use_reranker, top_k)
-        #print(f"Results:\n {'-'*10}\n{results}\n {'-'*10}\nQuery time: {query_ttime}")
+        results = search_engine.search(query, use_reranker, top_k)
+
         if results is None:
             return {"message": "No matches found."}
 

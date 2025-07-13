@@ -558,3 +558,6 @@ pyvenv.cfg
 backend/app/all_my_cards.csv
 backend/app/AtomicCards.json
 backend/app/embeddings/mixedbread-ai/mxbai-embed-large-v1.npy
+backend/app/models
+backend/app/embeddings
+*.tar.gz

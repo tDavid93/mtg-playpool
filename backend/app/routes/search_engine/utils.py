@@ -68,7 +68,8 @@ def create_atomic_card_text_representation(card, rulings_dict):
     Its colors are {colors}.
     Its color identity is {color_identity}.
     The mana cost is {mana_cost}.
-    {card_text}    
+    {card_text}
+    
     """
 
     power_toughness = ""

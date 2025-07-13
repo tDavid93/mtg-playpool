@@ -1,251 +1,371 @@
-import faiss
-import idlelib
-import numpy as np
-from sentence_transformers import SentenceTransformer
-
 import os
 import gc
 import time
+import logging
+from pathlib import Path
+from typing import Optional, List, Dict, Any, Tuple
 
-from FlagEmbedding import FlagReranker
+import faiss
+import numpy as np
 import pandas as pd
+from sentence_transformers import SentenceTransformer
+from FlagEmbedding import FlagReranker
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 
-
-class SentenceSearch:
-    model = None
-    index = None
-    name = None
-    model_name = ''
+class ModelManager:
+    """Handles model loading and resource management"""
     
-   # ner_model = spacy.load("hu_core_news_lg")
-
-    def __init__(self, item_desc, captions,model_paths, rerankers):
-        self.item_desc = item_desc
-        self.captions = captions
-        self.reranker = rerankers
-        self.model_paths = model_paths
+    def __init__(self):
+        self.current_model: Optional[SentenceTransformer] = None
+        self.current_model_name: str = ""
+        self.reranker: Optional[FlagReranker] = None
+    
+    def load_sentence_model(self, model_name: str) -> None:
+        """Load a sentence transformer model"""
+        if self.current_model_name == model_name and self.current_model is not None:
+            logger.info(f"Model {model_name} already loaded")
+            return
+            
+        self._cleanup_current_model()
         
-        self.embeddings = None
-        self.collection = pd.read_csv('all_my_cards.csv')
-        self.collection['scryfalloracleid'] = self.collection.apply(lambda x: ', '.join(item_desc[item_desc['name'] == x['Card Name']]['scryfalloracleid'].unique()), axis=1)
-        self.filter_ids = set(self.collection['scryfalloracleid'].values)
-
-    def load_and_unload_model(self, model_name , rebuild_embeddings=False):
-        """
-        Load a new model and its FAISS index, unloading any previously loaded model.
-        """
-        self.model_name = model_name
-
-        # Unload the current model
-        if self.model is not None:
-            del self.model
-            del self.index
+        try:
+            self.current_model = SentenceTransformer(
+                model_name, 
+                trust_remote_code=True, 
+                device='cuda'
+            )
+            self.current_model_name = model_name
+            logger.info(f"Successfully loaded model: {model_name}")
+        except Exception as e:
+            logger.error(f"Failed to load model {model_name}: {e}")
+            raise
+    
+    def load_reranker(self, reranker_name: str) -> None:
+        """Load a reranker model"""
+        try:
+            self.reranker = FlagReranker(reranker_name)
+            logger.info(f"Successfully loaded reranker: {reranker_name}")
+        except Exception as e:
+            logger.error(f"Failed to load reranker {reranker_name}: {e}")
+            raise
+    
+    def _cleanup_current_model(self) -> None:
+        """Clean up currently loaded model"""
+        if self.current_model is not None:
+            del self.current_model
+            self.current_model = None
+            self.current_model_name = ""
             gc.collect()
 
-        self.model = SentenceTransformer(self.model_name, trust_remote_code=True, device='cuda')
-        if not os.path.exists(f"embeddings/{self.model_name}.npy") or rebuild_embeddings:
-            print(f"Creating embeddings for {self.model_name}")
-            self.create_embeddings()
-        else: 
-            self.embeddings = np.load(f"embeddings/{self.model_name}.npy")
-        self.index = self.create_faiss_vector_store()
 
-        return f"Model {model_name} loaded successfully."
+class EmbeddingManager:
+    """Handles embedding creation and caching"""
     
-    def load_reranker(self, reranker_name):
-        """
-        Load a reranker model.
-        """
-        self.reranker = FlagReranker(reranker_name)
-        return f"Reranker {reranker_name} loaded successfully."
-
-    def create_embeddings(self):
-        """
-        Create embeddings for the entire dataset.
-        """
-        self.embeddings = self.model.encode(self.captions, convert_to_numpy=True, show_progress_bar=True)
-
-        if not os.path.exists(f'embeddings/{self.model_name}.py'):
-            print(f'Creating directory embeddings/{self.model_name}')
-            os.makedirs(f'embeddings/{self.model_name}')
+    def __init__(self, embeddings_dir: str = "embeddings"):
+        self.embeddings_dir = Path(embeddings_dir)
+        self.embeddings_dir.mkdir(exist_ok=True)
+    
+    def get_embeddings_path(self, model_name: str) -> Path:
+        """Get the path for cached embeddings"""
+        # Clean model name for filesystem
+        safe_name = model_name.replace('/', '_').replace('\\', '_')
+        return self.embeddings_dir / f"{safe_name}.npy"
+    
+    def load_or_create_embeddings(
+        self, 
+        model: SentenceTransformer, 
+        model_name: str, 
+        texts: List[str],
+        force_rebuild: bool = False
+    ) -> np.ndarray:
+        """Load cached embeddings or create new ones"""
+        embeddings_path = self.get_embeddings_path(model_name)
         
-
-        np.save(f"embeddings/{self.model_name}.npy", self.embeddings)
-
-
-
-    def create_faiss_vector_store(self):
-        """
-        Create an HNSW FAISS index for storing vectors.
-        """
-        print("Creating FAISS index")
-        embedding_dimension = self.embeddings.shape[1]
+        if embeddings_path.exists() and not force_rebuild:
+            logger.info(f"Loading cached embeddings from {embeddings_path}")
+            return np.load(embeddings_path)
         
-        # Create an HNSW index
-        index = faiss.IndexHNSWFlat(embedding_dimension, 32)  # Example: M=32
-        index.hnsw.efConstruction = 200  # Example value, adjust based on dataset size and desired precision
-        faiss.normalize_L2(self.embeddings)  # Ensure embeddings are normalized if not already
+        logger.info(f"Creating embeddings for {model_name}")
+        embeddings = model.encode(texts, convert_to_numpy=True, show_progress_bar=True)
         
-        # Wrap the HNSW index with an IDMap
+        # Cache the embeddings
+        np.save(embeddings_path, embeddings)
+        logger.info(f"Saved embeddings to {embeddings_path}")
+        
+        return embeddings
+
+
+class FAISSIndexManager:
+    """Handles FAISS index creation and management"""
+    
+    @staticmethod
+    def create_hnsw_index(embeddings: np.ndarray, m: int = 32, ef_construction: int = 200) -> faiss.IndexIDMap:
+        """Create an HNSW FAISS index"""
+        logger.info("Creating FAISS HNSW index")
+        
+        embedding_dimension = embeddings.shape[1]
+        
+        # Create HNSW index
+        index = faiss.IndexHNSWFlat(embedding_dimension, m)
+        index.hnsw.efConstruction = ef_construction
+        
+        # Normalize embeddings
+        normalized_embeddings = embeddings.copy()
+        faiss.normalize_L2(normalized_embeddings)
+        
+        # Wrap with IDMap for ID support
         index_with_ids = faiss.IndexIDMap(index)
-        index_with_ids.add_with_ids(self.embeddings, np.arange(len(self.embeddings)))
-
+        index_with_ids.add_with_ids(normalized_embeddings, np.arange(len(embeddings)))
+        
+        logger.info(f"Created index with {len(embeddings)} vectors")
         return index_with_ids
 
 
-    def extract_entities(self, text):
-        """
-        Extract named entities from the text using spaCy.
-        """
-        print("Extracting entities")
-        doc = self.ner_model(text)
-        entities = {ent.text: ent.label_ for ent in doc.ents}
-        print("Entities extracted: ", entities)
-        return entities
-
-    def enhance_query_with_entities(self, query_text):
-        """
-        Enhance the search query by identifying and prioritizing entities.
-        """
-        print(f"Query text: {query_text}")
-        entities = self.extract_entities(query_text)
-        # You can modify this part to customize how you want to enhance the query based on extracted entities
-        enhanced_query = query_text
-        for entity, label in entities.items():
-            if label in ['ORG', 'PRODUCT']:  # Customize based on your needs
-                
-                enhanced_query += f" {entity}"
-        
-        print(f"Enhanced query: {enhanced_query}")
-        return enhanced_query
+class QueryProcessor:
+    """Handles query preprocessing and enhancement"""
     
-    def preprocess_query(self, query):
-    # Example preprocessing to better align with card data
-        return f"Find card that match: {query}"
+    @staticmethod
+    def preprocess_query(query: str, model_name: str = "") -> str:
+        """Preprocess query based on model requirements"""
+        processed_query = f"Find card that match: {query}"
+        
+        # Model-specific preprocessing
+        if 'mtg-commander-embeddings' in model_name:
+            processed_query = f'Represent this sentence for searching relevant passages: {processed_query}'
+        
+        return processed_query
 
-    def search(self, query_text, top_k=30, use_reranker=True, filtered_by_collection=True):
-        """
-        Search the FAISS HNSW index for the top_k closest vectors to the query text.
-        """
-        print("Searching")
+
+class SentenceSearch:
+    """Main search class with improved architecture"""
+    
+    def __init__(self, item_desc: pd.DataFrame, captions: List[str], collection_path: str = 'all_my_cards.csv'):
+        self.item_desc = item_desc
+        self.captions = captions
+        
+        # Initialize managers
+        self.model_manager = ModelManager()
+        self.embedding_manager = EmbeddingManager()
+        self.query_processor = QueryProcessor()
+        
+        # Load collection and create filter
+        self.collection = self._load_collection(collection_path)
+        self.filter_ids = self._create_filter_ids()
+        
+        # Search components
+        self.embeddings: Optional[np.ndarray] = None
+        self.index: Optional[faiss.IndexIDMap] = None
+        self.last_results: Optional[pd.DataFrame] = None
+    
+    def _load_collection(self, collection_path: str) -> pd.DataFrame:
+        """Load and prepare collection data"""
+        if not os.path.exists(collection_path):
+            logger.warning(f"Collection file {collection_path} not found")
+            return pd.DataFrame()
+        
+        collection = pd.read_csv(collection_path)
+        
+        # Create scryfalloracleid mapping
+        collection['scryfalloracleid'] = collection.apply(
+            lambda x: ', '.join(
+                self.item_desc[self.item_desc['name'] == x['Card Name']]['scryfalloracleid'].unique()
+            ), 
+            axis=1
+        )
+        
+        return collection
+    
+    def _create_filter_ids(self) -> set:
+        """Create set of filter IDs for collection filtering"""
+        if self.collection.empty:
+            return set()
+        return set(self.collection['scryfalloracleid'].values)
+    
+    def load_model(self, model_name: str, rebuild_embeddings: bool = False) -> str:
+        """Load model and prepare for searching"""
         try:
-            query_text = self.preprocess_query(query_text)
+            # Load the model
+            self.model_manager.load_sentence_model(model_name)
             
-            if self.model_name == 'mixedbread-ai/mxbai-embed-large-v1':
-                query_text = f'Represent this sentence for searching relevant passages: {query_text}'
+            # Create or load embeddings
+            self.embeddings = self.embedding_manager.load_or_create_embeddings(
+                self.model_manager.current_model,
+                model_name,
+                self.captions,
+                rebuild_embeddings
+            )
             
-            query_embedding = self.model.encode(query_text, convert_to_numpy=True)
-            l2_norm = np.linalg.norm(query_embedding)
-            query_embedding /= l2_norm
-
-            matches = None
-            max_iterations = 10
-            iteration = 0
-            found_enough_matches = False
-
-            while iteration < max_iterations and not found_enough_matches:
-                if isinstance(self.index, faiss.IndexIDMap):
-                    hnsw_index = faiss.downcast_index(self.index.index)
-                    hnsw_index.hnsw.efSearch = 100  # Adjust this value based on desired search precision
-                    distances, retrieved_ids = self.index.search(np.expand_dims(query_embedding, axis=0), top_k)
-                else:
-                    print("Index is not of type IndexIDMap with an HNSW index.")
-                    return None
-
-                if len(retrieved_ids[0]) == 0:
-                    print("No matches found in this iteration.")
-                    iteration += 1
-                    top_k *= 2  # Increase the search scope
-                    continue
-
-                current_matches = self.item_desc.iloc[retrieved_ids[0]].reset_index(drop=True)
-
-                if filtered_by_collection:
-                    # Ensure that current_matches filtering by 'scryfalloracleid' does not use a list directly if it's unhashable
-                    
-                    
-                    current_matches = current_matches[current_matches['scryfalloracleid'].isin(self.filter_ids)]
-                    print(f"Iteration {iteration + 1}: Found {len(current_matches)} matches in collection.")
-
-                print(f"Iteration {iteration + 1}: Found {len(current_matches)} matches.")
-                if matches is None:
-                    matches = current_matches
-                else:
-                    print(f"Current matches: {current_matches.shape}, Total matches: {matches.shape}.")
-                    matches = pd.concat([matches, current_matches], ignore_index=True)
-                    matches = matches.drop_duplicates(subset=['scryfalloracleid'])
-
-                if len(matches) >= top_k:
-                    found_enough_matches = True
-                    matches = matches.head(top_k)
-                    print("Found enough matches.")
-                else:
-                    iteration += 1
-                    top_k *= 2  # Increase the search scope
-
-                if top_k > 1000:
-                    print("Reached upper limit for search breadth.")
-                    break
-
-            if use_reranker and self.reranker is not None:
-                retrieved_text = self.captions.iloc[retrieved_ids[0]]
-                scores = self.reranker.compute_score([(query_text, rt) for rt in retrieved_text])
-                matches['scores'] = scores
-                matches = matches.sort_values(by='scores', ascending=False).reset_index(drop=True)
-                print("Reranked matches: ", matches)
-
-            return matches
-
+            # Create FAISS index
+            self.index = FAISSIndexManager.create_hnsw_index(self.embeddings)
+            
+            return f"Model {model_name} loaded successfully"
+            
         except Exception as e:
-            print(f"An error occurred during search: {e}")
+            logger.error(f"Failed to load model {model_name}: {e}")
+            return f"Failed to load model: {e}"
+    
+    def load_reranker(self, reranker_name: str) -> str:
+        """Load reranker model"""
+        try:
+            self.model_manager.load_reranker(reranker_name)
+            return f"Reranker {reranker_name} loaded successfully"
+        except Exception as e:
+            return f"Failed to load reranker: {e}"
+    
+    def search(
+        self, 
+        query: str, 
+        top_k: int = 30, 
+        use_reranker: bool = True, 
+        filter_by_collection: bool = False,
+        ef_search: int = 100
+    ) -> Optional[pd.DataFrame]:
+        """Perform semantic search"""
+        
+        if not self._is_ready_for_search():
+            logger.error("Search components not ready")
             return None
-
-
-    def gradio_search(self, query, use_reranker,filtered_by_collection, top_k=30):
-        """
-        Perform a search using the currently loaded model.
-        """
-        start = time.time()
         
-        if self.model is None:
-            return "No model is loaded. Please load a model first."
-
-        #print(f"Searching with model {self.model_name} and reranker {self.reranker.model}.")
-        results = self.search(query, top_k, use_reranker, filtered_by_collection)
-
-        if results is None:
-            return "No matches found."
-
-        #categories = self.get_categories(results)
-        #print(type(categories))
-
-        if use_reranker:
-            results = results.sort_values(by='scores', ascending=False).reset_index(drop=True)
-        
-        query_time = time.time() - start
-        time_text = f"Query time: {query_time:.4f} seconds {'With' if use_reranker else 'Without'} reranker"
-        self.results = results
-        
-        
-        results = results.to_dict(orient='records')
-        
-        return results,  time_text 
+        try:
+            # Preprocess query
+            processed_query = self.query_processor.preprocess_query(
+                query, self.model_manager.current_model_name
+            )
+            
+            # Get query embedding
+            query_embedding = self._get_query_embedding(processed_query)
+            
+            # Search FAISS index
+            results = self._search_faiss_index(query_embedding, top_k, ef_search)
+            
+            if results is None or len(results) == 0:
+                logger.info("No results found")
+                return None
+            
+            # Apply collection filter if requested
+            if filter_by_collection and self.filter_ids:
+                results = self._apply_collection_filter(results)
+            
+            # Apply reranking if requested
+            if use_reranker and self.model_manager.reranker is not None:
+                results = self._apply_reranking(results, processed_query, top_k)
+            
+            self.last_results = results
+            return results
+            
+        except Exception as e:
+            logger.error(f"Search failed: {e}")
+            return None
     
+    def _is_ready_for_search(self) -> bool:
+        """Check if all components are ready for search"""
+        return all([
+            self.model_manager.current_model is not None,
+            self.embeddings is not None,
+            self.index is not None
+        ])
     
-
-    def filter_results(self, categories):
-        if not categories:
-            filtered_df = self.results
+    def _get_query_embedding(self, query: str) -> np.ndarray:
+        """Get normalized query embedding"""
+        query_embedding = self.model_manager.current_model.encode(query, convert_to_numpy=True)
+        # Normalize
+        query_embedding = query_embedding / np.linalg.norm(query_embedding)
+        return query_embedding
+    
+    def _search_faiss_index(self, query_embedding: np.ndarray, top_k: int, ef_search: int) -> pd.DataFrame:
+        """Search the FAISS index"""
+        # Set search parameters
+        if isinstance(self.index, faiss.IndexIDMap):
+            hnsw_index = faiss.downcast_index(self.index.index)
+            hnsw_index.hnsw.efSearch = ef_search
+        
+        # Perform search
+        distances, indices = self.index.search(np.expand_dims(query_embedding, axis=0), top_k)
+        
+        if len(indices[0]) == 0:
+            return pd.DataFrame()
+        
+        # Get results
+        results = self.item_desc.iloc[indices[0]].copy().reset_index(drop=True)
+        results['search_distance'] = distances[0]
+        results['search_rank'] = range(len(results))
+        
+        return results
+    
+    def _apply_collection_filter(self, results: pd.DataFrame) -> pd.DataFrame:
+        """Filter results by collection"""
+        if 'scryfalloracleid' not in results.columns:
+            logger.warning("Cannot filter by collection: scryfalloracleid column missing")
+            return results
+        
+        filtered = results[results['scryfalloracleid'].isin(self.filter_ids)]
+        logger.info(f"Collection filter: {len(results)} -> {len(filtered)} results")
+        return filtered
+    
+    def _apply_reranking(self, results: pd.DataFrame, query: str, top_k: int) -> pd.DataFrame:
+        """Apply reranking to results"""
+        if len(results) == 0:
+            return results
+        
+        # Get text for reranking (assuming there's a text column or use captions)
+        if 'text' in results.columns:
+            texts = results['text'].tolist()
         else:
-            filtered_df = self.results[self.results['category'].isin(categories)]
-
-        return filtered_df
-
-
-
-
-
-
-    def get_single_embedding(self, text):
-        return self.model.encode(text, convert_to_numpy=True)
+            # Use captions based on original indices
+            texts = [self.captions[i] for i in results.index]
+        
+        # Compute reranking scores
+        query_text_pairs = [(query, text) for text in texts]
+        scores = self.model_manager.reranker.compute_score(query_text_pairs)
+        
+        # Add scores and rerank
+        results = results.copy()
+        results['rerank_score'] = scores
+        results = results.sort_values('rerank_score', ascending=False).head(top_k)
+        
+        logger.info("Applied reranking")
+        return results
+    
+    def gradio_search(
+        self, 
+        query: str, 
+        use_reranker: bool = True, 
+        filter_by_collection: bool = False, 
+        top_k: int = 30
+    ) -> Tuple[List[Dict[str, Any]], str]:
+        """Gradio-compatible search interface"""
+        start_time = time.time()
+        
+        if not self._is_ready_for_search():
+            return [], "No model loaded. Please load a model first."
+        
+        results = self.search(query, top_k, use_reranker, filter_by_collection)
+        
+        if results is None or len(results) == 0:
+            return [], "No matches found."
+        
+        query_time = time.time() - start_time
+        time_text = f"Query time: {query_time:.4f}s {'with' if use_reranker else 'without'} reranker"
+        
+        return results.to_dict('records'), time_text
+    
+    def get_single_embedding(self, text: str) -> np.ndarray:
+        """Get embedding for a single text"""
+        if self.model_manager.current_model is None:
+            raise ValueError("No model loaded")
+        return self.model_manager.current_model.encode(text, convert_to_numpy=True)
+    
+    def cleanup(self) -> None:
+        """Clean up resources"""
+        self.model_manager._cleanup_current_model()
+        if hasattr(self.model_manager, 'reranker') and self.model_manager.reranker is not None:
+            del self.model_manager.reranker
+        gc.collect()
+    
+    def __del__(self):
+        """Destructor to ensure cleanup"""
+        self.cleanup()
